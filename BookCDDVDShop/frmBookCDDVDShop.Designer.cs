@@ -28,36 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grpProduct = new System.Windows.Forms.GroupBox();
             this.grpCDChamber = new System.Windows.Forms.GroupBox();
-            this.txtInstruments = new System.Windows.Forms.TextBox();
+            this.txtCDChamberInstrumentList = new System.Windows.Forms.TextBox();
             this.lblInstuments = new System.Windows.Forms.Label();
             this.grpCDOrchestral = new System.Windows.Forms.GroupBox();
-            this.txtConstructor = new System.Windows.Forms.TextBox();
+            this.txtCDOrchestraConductor = new System.Windows.Forms.TextBox();
             this.lblConstructor = new System.Windows.Forms.Label();
             this.grpCDClassical = new System.Windows.Forms.GroupBox();
-            this.txtArtist = new System.Windows.Forms.TextBox();
+            this.txtCDClassicalArtists = new System.Windows.Forms.TextBox();
             this.lblArtist = new System.Windows.Forms.Label();
-            this.txtLabel = new System.Windows.Forms.TextBox();
+            this.txtCDClassicalLabel = new System.Windows.Forms.TextBox();
             this.lblLabel = new System.Windows.Forms.Label();
             this.grpDVD = new System.Windows.Forms.GroupBox();
-            this.txtRunTime = new System.Windows.Forms.TextBox();
+            this.txtDVDRunTime = new System.Windows.Forms.TextBox();
             this.lblRunTime = new System.Windows.Forms.Label();
-            this.txtReleaseDate = new System.Windows.Forms.TextBox();
+            this.txtDVDReleaseDate = new System.Windows.Forms.TextBox();
             this.lblReleaseDate = new System.Windows.Forms.Label();
-            this.txtLeadActor = new System.Windows.Forms.TextBox();
+            this.txtDVDLeadActor = new System.Windows.Forms.TextBox();
             this.lblLeadActor = new System.Windows.Forms.Label();
             this.grpCIS = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBookCISCISArea = new System.Windows.Forms.TextBox();
             this.lblCISArea = new System.Windows.Forms.Label();
             this.grpBook = new System.Windows.Forms.GroupBox();
-            this.txtPages = new System.Windows.Forms.TextBox();
+            this.txtBookPages = new System.Windows.Forms.TextBox();
             this.lblPages = new System.Windows.Forms.Label();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.txtBookAuthor = new System.Windows.Forms.TextBox();
             this.lblAuthor = new System.Windows.Forms.Label();
             this.lbldash = new System.Windows.Forms.Label();
-            this.txtISBN2 = new System.Windows.Forms.TextBox();
-            this.txtISBN1 = new System.Windows.Forms.TextBox();
+            this.txtBookISBNRight = new System.Windows.Forms.TextBox();
+            this.txtBookISBNLeft = new System.Windows.Forms.TextBox();
             this.lblISBN = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.txtProductQuantity = new System.Windows.Forms.TextBox();
@@ -71,21 +72,22 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.lblC = new System.Windows.Forms.Label();
             this.grpControls = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCreateCDChamber = new System.Windows.Forms.Button();
+            this.btnCreateCDOrchestra = new System.Windows.Forms.Button();
             this.btnCreateDVD = new System.Windows.Forms.Button();
-            this.btnCreateCISBook = new System.Windows.Forms.Button();
+            this.btnCreateBookCIS = new System.Windows.Forms.Button();
             this.btnCreateBook = new System.Windows.Forms.Button();
             this.grpfrmControls = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSaveUpdate = new System.Windows.Forms.Button();
             this.btnEditUpdate = new System.Windows.Forms.Button();
-            this.btnFIndDisplay = new System.Windows.Forms.Button();
+            this.btnFindDisplay = new System.Windows.Forms.Button();
             this.btnEnterUPC = new System.Windows.Forms.Button();
             this.lblalert2 = new System.Windows.Forms.Label();
             this.lblalert = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.grpProduct.SuspendLayout();
             this.grpCDChamber.SuspendLayout();
             this.grpCDOrchestral.SuspendLayout();
@@ -122,7 +124,7 @@
             // 
             // grpCDChamber
             // 
-            this.grpCDChamber.Controls.Add(this.txtInstruments);
+            this.grpCDChamber.Controls.Add(this.txtCDChamberInstrumentList);
             this.grpCDChamber.Controls.Add(this.lblInstuments);
             this.grpCDChamber.Location = new System.Drawing.Point(346, 400);
             this.grpCDChamber.Name = "grpCDChamber";
@@ -131,12 +133,12 @@
             this.grpCDChamber.TabStop = false;
             this.grpCDChamber.Text = "CD Chamber Music";
             // 
-            // txtInstruments
+            // txtCDChamberInstrumentList
             // 
-            this.txtInstruments.Location = new System.Drawing.Point(103, 25);
-            this.txtInstruments.Name = "txtInstruments";
-            this.txtInstruments.Size = new System.Drawing.Size(203, 22);
-            this.txtInstruments.TabIndex = 3;
+            this.txtCDChamberInstrumentList.Location = new System.Drawing.Point(103, 25);
+            this.txtCDChamberInstrumentList.Name = "txtCDChamberInstrumentList";
+            this.txtCDChamberInstrumentList.Size = new System.Drawing.Size(203, 22);
+            this.txtCDChamberInstrumentList.TabIndex = 3;
             // 
             // lblInstuments
             // 
@@ -149,7 +151,7 @@
             // 
             // grpCDOrchestral
             // 
-            this.grpCDOrchestral.Controls.Add(this.txtConstructor);
+            this.grpCDOrchestral.Controls.Add(this.txtCDOrchestraConductor);
             this.grpCDOrchestral.Controls.Add(this.lblConstructor);
             this.grpCDOrchestral.Location = new System.Drawing.Point(18, 400);
             this.grpCDOrchestral.Name = "grpCDOrchestral";
@@ -158,12 +160,12 @@
             this.grpCDOrchestral.TabStop = false;
             this.grpCDOrchestral.Text = "CD Orchestral Music";
             // 
-            // txtConstructor
+            // txtCDOrchestraConductor
             // 
-            this.txtConstructor.Location = new System.Drawing.Point(99, 25);
-            this.txtConstructor.Name = "txtConstructor";
-            this.txtConstructor.Size = new System.Drawing.Size(166, 22);
-            this.txtConstructor.TabIndex = 3;
+            this.txtCDOrchestraConductor.Location = new System.Drawing.Point(99, 25);
+            this.txtCDOrchestraConductor.Name = "txtCDOrchestraConductor";
+            this.txtCDOrchestraConductor.Size = new System.Drawing.Size(166, 22);
+            this.txtCDOrchestraConductor.TabIndex = 3;
             // 
             // lblConstructor
             // 
@@ -176,9 +178,9 @@
             // 
             // grpCDClassical
             // 
-            this.grpCDClassical.Controls.Add(this.txtArtist);
+            this.grpCDClassical.Controls.Add(this.txtCDClassicalArtists);
             this.grpCDClassical.Controls.Add(this.lblArtist);
-            this.grpCDClassical.Controls.Add(this.txtLabel);
+            this.grpCDClassical.Controls.Add(this.txtCDClassicalLabel);
             this.grpCDClassical.Controls.Add(this.lblLabel);
             this.grpCDClassical.Location = new System.Drawing.Point(18, 321);
             this.grpCDClassical.Name = "grpCDClassical";
@@ -187,12 +189,12 @@
             this.grpCDClassical.TabStop = false;
             this.grpCDClassical.Text = "CDClassical";
             // 
-            // txtArtist
+            // txtCDClassicalArtists
             // 
-            this.txtArtist.Location = new System.Drawing.Point(333, 25);
-            this.txtArtist.Name = "txtArtist";
-            this.txtArtist.Size = new System.Drawing.Size(249, 22);
-            this.txtArtist.TabIndex = 5;
+            this.txtCDClassicalArtists.Location = new System.Drawing.Point(333, 25);
+            this.txtCDClassicalArtists.Name = "txtCDClassicalArtists";
+            this.txtCDClassicalArtists.Size = new System.Drawing.Size(249, 22);
+            this.txtCDClassicalArtists.TabIndex = 5;
             // 
             // lblArtist
             // 
@@ -203,12 +205,12 @@
             this.lblArtist.TabIndex = 4;
             this.lblArtist.Text = "Artist";
             // 
-            // txtLabel
+            // txtCDClassicalLabel
             // 
-            this.txtLabel.Location = new System.Drawing.Point(65, 25);
-            this.txtLabel.Name = "txtLabel";
-            this.txtLabel.Size = new System.Drawing.Size(173, 22);
-            this.txtLabel.TabIndex = 3;
+            this.txtCDClassicalLabel.Location = new System.Drawing.Point(65, 25);
+            this.txtCDClassicalLabel.Name = "txtCDClassicalLabel";
+            this.txtCDClassicalLabel.Size = new System.Drawing.Size(173, 22);
+            this.txtCDClassicalLabel.TabIndex = 3;
             // 
             // lblLabel
             // 
@@ -221,11 +223,11 @@
             // 
             // grpDVD
             // 
-            this.grpDVD.Controls.Add(this.txtRunTime);
+            this.grpDVD.Controls.Add(this.txtDVDRunTime);
             this.grpDVD.Controls.Add(this.lblRunTime);
-            this.grpDVD.Controls.Add(this.txtReleaseDate);
+            this.grpDVD.Controls.Add(this.txtDVDReleaseDate);
             this.grpDVD.Controls.Add(this.lblReleaseDate);
-            this.grpDVD.Controls.Add(this.txtLeadActor);
+            this.grpDVD.Controls.Add(this.txtDVDLeadActor);
             this.grpDVD.Controls.Add(this.lblLeadActor);
             this.grpDVD.Location = new System.Drawing.Point(18, 241);
             this.grpDVD.Name = "grpDVD";
@@ -234,12 +236,12 @@
             this.grpDVD.TabStop = false;
             this.grpDVD.Text = "DVD";
             // 
-            // txtRunTime
+            // txtDVDRunTime
             // 
-            this.txtRunTime.Location = new System.Drawing.Point(579, 25);
-            this.txtRunTime.Name = "txtRunTime";
-            this.txtRunTime.Size = new System.Drawing.Size(55, 22);
-            this.txtRunTime.TabIndex = 7;
+            this.txtDVDRunTime.Location = new System.Drawing.Point(579, 25);
+            this.txtDVDRunTime.Name = "txtDVDRunTime";
+            this.txtDVDRunTime.Size = new System.Drawing.Size(55, 22);
+            this.txtDVDRunTime.TabIndex = 7;
             // 
             // lblRunTime
             // 
@@ -250,12 +252,12 @@
             this.lblRunTime.TabIndex = 6;
             this.lblRunTime.Text = "Run Time";
             // 
-            // txtReleaseDate
+            // txtDVDReleaseDate
             // 
-            this.txtReleaseDate.Location = new System.Drawing.Point(387, 25);
-            this.txtReleaseDate.Name = "txtReleaseDate";
-            this.txtReleaseDate.Size = new System.Drawing.Size(100, 22);
-            this.txtReleaseDate.TabIndex = 5;
+            this.txtDVDReleaseDate.Location = new System.Drawing.Point(387, 25);
+            this.txtDVDReleaseDate.Name = "txtDVDReleaseDate";
+            this.txtDVDReleaseDate.Size = new System.Drawing.Size(100, 22);
+            this.txtDVDReleaseDate.TabIndex = 5;
             // 
             // lblReleaseDate
             // 
@@ -266,12 +268,12 @@
             this.lblReleaseDate.TabIndex = 4;
             this.lblReleaseDate.Text = "Release Date";
             // 
-            // txtLeadActor
+            // txtDVDLeadActor
             // 
-            this.txtLeadActor.Location = new System.Drawing.Point(99, 25);
-            this.txtLeadActor.Name = "txtLeadActor";
-            this.txtLeadActor.Size = new System.Drawing.Size(166, 22);
-            this.txtLeadActor.TabIndex = 3;
+            this.txtDVDLeadActor.Location = new System.Drawing.Point(99, 25);
+            this.txtDVDLeadActor.Name = "txtDVDLeadActor";
+            this.txtDVDLeadActor.Size = new System.Drawing.Size(166, 22);
+            this.txtDVDLeadActor.TabIndex = 3;
             // 
             // lblLeadActor
             // 
@@ -284,7 +286,7 @@
             // 
             // grpCIS
             // 
-            this.grpCIS.Controls.Add(this.textBox1);
+            this.grpCIS.Controls.Add(this.txtBookCISCISArea);
             this.grpCIS.Controls.Add(this.lblCISArea);
             this.grpCIS.Location = new System.Drawing.Point(18, 154);
             this.grpCIS.Name = "grpCIS";
@@ -293,12 +295,12 @@
             this.grpCIS.TabStop = false;
             this.grpCIS.Text = "CIS Book";
             // 
-            // textBox1
+            // txtBookCISCISArea
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtBookCISCISArea.Location = new System.Drawing.Point(85, 24);
+            this.txtBookCISCISArea.Name = "txtBookCISCISArea";
+            this.txtBookCISCISArea.Size = new System.Drawing.Size(153, 22);
+            this.txtBookCISCISArea.TabIndex = 1;
             // 
             // lblCISArea
             // 
@@ -311,13 +313,13 @@
             // 
             // grpBook
             // 
-            this.grpBook.Controls.Add(this.txtPages);
+            this.grpBook.Controls.Add(this.txtBookPages);
             this.grpBook.Controls.Add(this.lblPages);
-            this.grpBook.Controls.Add(this.txtAuthor);
+            this.grpBook.Controls.Add(this.txtBookAuthor);
             this.grpBook.Controls.Add(this.lblAuthor);
             this.grpBook.Controls.Add(this.lbldash);
-            this.grpBook.Controls.Add(this.txtISBN2);
-            this.grpBook.Controls.Add(this.txtISBN1);
+            this.grpBook.Controls.Add(this.txtBookISBNRight);
+            this.grpBook.Controls.Add(this.txtBookISBNLeft);
             this.grpBook.Controls.Add(this.lblISBN);
             this.grpBook.Location = new System.Drawing.Point(18, 65);
             this.grpBook.Name = "grpBook";
@@ -326,12 +328,12 @@
             this.grpBook.TabStop = false;
             this.grpBook.Text = "Book";
             // 
-            // txtPages
+            // txtBookPages
             // 
-            this.txtPages.Location = new System.Drawing.Point(494, 28);
-            this.txtPages.Name = "txtPages";
-            this.txtPages.Size = new System.Drawing.Size(38, 22);
-            this.txtPages.TabIndex = 15;
+            this.txtBookPages.Location = new System.Drawing.Point(494, 28);
+            this.txtBookPages.Name = "txtBookPages";
+            this.txtBookPages.Size = new System.Drawing.Size(38, 22);
+            this.txtBookPages.TabIndex = 15;
             // 
             // lblPages
             // 
@@ -342,12 +344,12 @@
             this.lblPages.TabIndex = 14;
             this.lblPages.Text = "Pages";
             // 
-            // txtAuthor
+            // txtBookAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(240, 28);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(160, 22);
-            this.txtAuthor.TabIndex = 13;
+            this.txtBookAuthor.Location = new System.Drawing.Point(240, 28);
+            this.txtBookAuthor.Name = "txtBookAuthor";
+            this.txtBookAuthor.Size = new System.Drawing.Size(160, 22);
+            this.txtBookAuthor.TabIndex = 13;
             // 
             // lblAuthor
             // 
@@ -367,19 +369,19 @@
             this.lbldash.TabIndex = 11;
             this.lbldash.Text = "-";
             // 
-            // txtISBN2
+            // txtBookISBNRight
             // 
-            this.txtISBN2.Location = new System.Drawing.Point(125, 28);
-            this.txtISBN2.Name = "txtISBN2";
-            this.txtISBN2.Size = new System.Drawing.Size(40, 22);
-            this.txtISBN2.TabIndex = 10;
+            this.txtBookISBNRight.Location = new System.Drawing.Point(125, 28);
+            this.txtBookISBNRight.Name = "txtBookISBNRight";
+            this.txtBookISBNRight.Size = new System.Drawing.Size(40, 22);
+            this.txtBookISBNRight.TabIndex = 10;
             // 
-            // txtISBN1
+            // txtBookISBNLeft
             // 
-            this.txtISBN1.Location = new System.Drawing.Point(60, 28);
-            this.txtISBN1.Name = "txtISBN1";
-            this.txtISBN1.Size = new System.Drawing.Size(40, 22);
-            this.txtISBN1.TabIndex = 9;
+            this.txtBookISBNLeft.Location = new System.Drawing.Point(60, 28);
+            this.txtBookISBNLeft.Name = "txtBookISBNLeft";
+            this.txtBookISBNLeft.Size = new System.Drawing.Size(40, 22);
+            this.txtBookISBNLeft.TabIndex = 9;
             // 
             // lblISBN
             // 
@@ -490,10 +492,10 @@
             // 
             // grpControls
             // 
-            this.grpControls.Controls.Add(this.button2);
-            this.grpControls.Controls.Add(this.button1);
+            this.grpControls.Controls.Add(this.btnCreateCDChamber);
+            this.grpControls.Controls.Add(this.btnCreateCDOrchestra);
             this.grpControls.Controls.Add(this.btnCreateDVD);
-            this.grpControls.Controls.Add(this.btnCreateCISBook);
+            this.grpControls.Controls.Add(this.btnCreateBookCIS);
             this.grpControls.Controls.Add(this.btnCreateBook);
             this.grpControls.Location = new System.Drawing.Point(54, 62);
             this.grpControls.Name = "grpControls";
@@ -502,23 +504,23 @@
             this.grpControls.TabStop = false;
             this.grpControls.Text = "Controls for Creating a New Entry";
             // 
-            // button2
+            // btnCreateCDChamber
             // 
-            this.button2.Location = new System.Drawing.Point(638, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Create CD Chamber";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCreateCDChamber.Location = new System.Drawing.Point(638, 21);
+            this.btnCreateCDChamber.Name = "btnCreateCDChamber";
+            this.btnCreateCDChamber.Size = new System.Drawing.Size(149, 23);
+            this.btnCreateCDChamber.TabIndex = 4;
+            this.btnCreateCDChamber.Text = "Create CD Chamber";
+            this.btnCreateCDChamber.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCreateCDOrchestra
             // 
-            this.button1.Location = new System.Drawing.Point(443, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Create CD Orchestra";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCreateCDOrchestra.Location = new System.Drawing.Point(443, 21);
+            this.btnCreateCDOrchestra.Name = "btnCreateCDOrchestra";
+            this.btnCreateCDOrchestra.Size = new System.Drawing.Size(169, 23);
+            this.btnCreateCDOrchestra.TabIndex = 3;
+            this.btnCreateCDOrchestra.Text = "Create CD Orchestra";
+            this.btnCreateCDOrchestra.UseVisualStyleBackColor = true;
             // 
             // btnCreateDVD
             // 
@@ -529,14 +531,14 @@
             this.btnCreateDVD.Text = "Create DVD";
             this.btnCreateDVD.UseVisualStyleBackColor = true;
             // 
-            // btnCreateCISBook
+            // btnCreateBookCIS
             // 
-            this.btnCreateCISBook.Location = new System.Drawing.Point(154, 21);
-            this.btnCreateCISBook.Name = "btnCreateCISBook";
-            this.btnCreateCISBook.Size = new System.Drawing.Size(135, 23);
-            this.btnCreateCISBook.TabIndex = 1;
-            this.btnCreateCISBook.Text = "Create CIS Book";
-            this.btnCreateCISBook.UseVisualStyleBackColor = true;
+            this.btnCreateBookCIS.Location = new System.Drawing.Point(154, 21);
+            this.btnCreateBookCIS.Name = "btnCreateBookCIS";
+            this.btnCreateBookCIS.Size = new System.Drawing.Size(135, 23);
+            this.btnCreateBookCIS.TabIndex = 1;
+            this.btnCreateBookCIS.Text = "Create CIS Book";
+            this.btnCreateBookCIS.UseVisualStyleBackColor = true;
             // 
             // btnCreateBook
             // 
@@ -552,7 +554,7 @@
             this.grpfrmControls.Controls.Add(this.btnDelete);
             this.grpfrmControls.Controls.Add(this.btnSaveUpdate);
             this.grpfrmControls.Controls.Add(this.btnEditUpdate);
-            this.grpfrmControls.Controls.Add(this.btnFIndDisplay);
+            this.grpfrmControls.Controls.Add(this.btnFindDisplay);
             this.grpfrmControls.Controls.Add(this.btnEnterUPC);
             this.grpfrmControls.Controls.Add(this.lblalert2);
             this.grpfrmControls.Controls.Add(this.lblalert);
@@ -590,14 +592,14 @@
             this.btnEditUpdate.Text = "Edit/Update";
             this.btnEditUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnFIndDisplay
+            // btnFindDisplay
             // 
-            this.btnFIndDisplay.Location = new System.Drawing.Point(230, 71);
-            this.btnFIndDisplay.Name = "btnFIndDisplay";
-            this.btnFIndDisplay.Size = new System.Drawing.Size(102, 23);
-            this.btnFIndDisplay.TabIndex = 3;
-            this.btnFIndDisplay.Text = "Find/Display";
-            this.btnFIndDisplay.UseVisualStyleBackColor = true;
+            this.btnFindDisplay.Location = new System.Drawing.Point(230, 71);
+            this.btnFindDisplay.Name = "btnFindDisplay";
+            this.btnFindDisplay.Size = new System.Drawing.Size(102, 23);
+            this.btnFindDisplay.TabIndex = 3;
+            this.btnFindDisplay.Text = "Find/Display";
+            this.btnFindDisplay.UseVisualStyleBackColor = true;
             // 
             // btnEnterUPC
             // 
@@ -663,6 +665,7 @@
             this.Controls.Add(this.grpProduct);
             this.Name = "frmBookCDDVDShop";
             this.Text = "Book CD DVD";
+            this.Load += new System.EventHandler(this.frmBookCDDVDShop_Load);
             this.grpProduct.ResumeLayout(false);
             this.grpProduct.PerformLayout();
             this.grpCDChamber.ResumeLayout(false);
@@ -687,64 +690,65 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpProduct;
-        private System.Windows.Forms.GroupBox grpCDChamber;
-        private System.Windows.Forms.TextBox txtInstruments;
-        private System.Windows.Forms.Label lblInstuments;
-        private System.Windows.Forms.GroupBox grpCDOrchestral;
-        private System.Windows.Forms.TextBox txtConstructor;
-        private System.Windows.Forms.Label lblConstructor;
-        private System.Windows.Forms.GroupBox grpCDClassical;
-        private System.Windows.Forms.TextBox txtArtist;
-        private System.Windows.Forms.Label lblArtist;
-        private System.Windows.Forms.TextBox txtLabel;
-        private System.Windows.Forms.Label lblLabel;
-        private System.Windows.Forms.GroupBox grpDVD;
-        private System.Windows.Forms.TextBox txtRunTime;
-        private System.Windows.Forms.Label lblRunTime;
-        private System.Windows.Forms.TextBox txtReleaseDate;
-        private System.Windows.Forms.Label lblReleaseDate;
-        private System.Windows.Forms.TextBox txtLeadActor;
-        private System.Windows.Forms.Label lblLeadActor;
-        private System.Windows.Forms.GroupBox grpCIS;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblCISArea;
-        private System.Windows.Forms.GroupBox grpBook;
-        private System.Windows.Forms.TextBox txtPages;
-        private System.Windows.Forms.Label lblPages;
-        private System.Windows.Forms.TextBox txtAuthor;
-        private System.Windows.Forms.Label lblAuthor;
-        private System.Windows.Forms.Label lbldash;
-        private System.Windows.Forms.TextBox txtISBN2;
-        private System.Windows.Forms.TextBox txtISBN1;
-        private System.Windows.Forms.Label lblISBN;
-        private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.TextBox txtProductQuantity;
-        private System.Windows.Forms.TextBox txtProductTitle;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox txtProductPrice;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Label lblUPC;
-        private System.Windows.Forms.Label lblFindSearch;
-        private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Label lblC;
-        private System.Windows.Forms.GroupBox grpControls;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnCreateDVD;
-        private System.Windows.Forms.Button btnCreateCISBook;
-        private System.Windows.Forms.Button btnCreateBook;
-        private System.Windows.Forms.GroupBox grpfrmControls;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnSaveUpdate;
-        private System.Windows.Forms.Button btnEditUpdate;
-        private System.Windows.Forms.Button btnFIndDisplay;
-        private System.Windows.Forms.Button btnEnterUPC;
-        private System.Windows.Forms.Label lblalert2;
-        private System.Windows.Forms.Label lblalert;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox txtProductUPC;
+        internal System.Windows.Forms.GroupBox grpProduct;
+        internal System.Windows.Forms.GroupBox grpCDChamber;
+        internal System.Windows.Forms.TextBox txtCDChamberInstrumentList;
+        internal System.Windows.Forms.Label lblInstuments;
+        internal System.Windows.Forms.GroupBox grpCDOrchestral;
+        internal System.Windows.Forms.TextBox txtCDOrchestraConductor;
+        internal System.Windows.Forms.Label lblConstructor;
+        internal System.Windows.Forms.GroupBox grpCDClassical;
+        internal System.Windows.Forms.TextBox txtCDClassicalArtists;
+        internal System.Windows.Forms.Label lblArtist;
+        internal System.Windows.Forms.TextBox txtCDClassicalLabel;
+        internal System.Windows.Forms.Label lblLabel;
+        internal System.Windows.Forms.GroupBox grpDVD;
+        internal System.Windows.Forms.TextBox txtDVDRunTime;
+        internal System.Windows.Forms.Label lblRunTime;
+        internal System.Windows.Forms.TextBox txtDVDReleaseDate;
+        internal System.Windows.Forms.Label lblReleaseDate;
+        internal System.Windows.Forms.TextBox txtDVDLeadActor;
+        internal System.Windows.Forms.Label lblLeadActor;
+        internal System.Windows.Forms.GroupBox grpCIS;
+        internal System.Windows.Forms.TextBox txtBookCISCISArea;
+        internal System.Windows.Forms.Label lblCISArea;
+        internal System.Windows.Forms.GroupBox grpBook;
+        internal System.Windows.Forms.TextBox txtBookPages;
+        internal System.Windows.Forms.Label lblPages;
+        internal System.Windows.Forms.TextBox txtBookAuthor;
+        internal System.Windows.Forms.Label lblAuthor;
+        internal System.Windows.Forms.Label lbldash;
+        internal System.Windows.Forms.TextBox txtBookISBNRight;
+        internal System.Windows.Forms.TextBox txtBookISBNLeft;
+        internal System.Windows.Forms.Label lblISBN;
+        internal System.Windows.Forms.Label lblQuantity;
+        internal System.Windows.Forms.TextBox txtProductQuantity;
+        internal System.Windows.Forms.TextBox txtProductTitle;
+        internal System.Windows.Forms.Label lblTitle;
+        internal System.Windows.Forms.TextBox txtProductPrice;
+        internal System.Windows.Forms.Label lblPrice;
+        internal System.Windows.Forms.Label lblUPC;
+        internal System.Windows.Forms.Label lblFindSearch;
+        internal System.Windows.Forms.Label lblHeader;
+        internal System.Windows.Forms.Label lblC;
+        internal System.Windows.Forms.GroupBox grpControls;
+        internal System.Windows.Forms.Button btnCreateCDChamber;
+        internal System.Windows.Forms.Button btnCreateCDOrchestra;
+        internal System.Windows.Forms.Button btnCreateDVD;
+        internal System.Windows.Forms.Button btnCreateBookCIS;
+        internal System.Windows.Forms.Button btnCreateBook;
+        internal System.Windows.Forms.GroupBox grpfrmControls;
+        internal System.Windows.Forms.Button btnDelete;
+        internal System.Windows.Forms.Button btnSaveUpdate;
+        internal System.Windows.Forms.Button btnEditUpdate;
+        internal System.Windows.Forms.Button btnFindDisplay;
+        internal System.Windows.Forms.Button btnEnterUPC;
+        internal System.Windows.Forms.Label lblalert2;
+        internal System.Windows.Forms.Label lblalert;
+        internal System.Windows.Forms.Button btnClear;
+        internal System.Windows.Forms.Button btnExit;
+        internal System.Windows.Forms.TextBox txtProductUPC;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
