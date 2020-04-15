@@ -150,5 +150,10 @@ namespace BookCDDVDShop
 
         }
 
+        private void btnCreateBook_Click(object sender, EventArgs e)
+        {
+            FormController.activateBook(this);
+            FormController.deactivateAllButBook(this);
+        }
     }
 }

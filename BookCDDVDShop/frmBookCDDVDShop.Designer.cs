@@ -557,6 +557,7 @@
             this.btnCreateBook.TabIndex = 0;
             this.btnCreateBook.Text = "Create Book";
             this.btnCreateBook.UseVisualStyleBackColor = true;
+            this.btnCreateBook.Click += new System.EventHandler(this.btnCreateBook_Click);
             // 
             // grpfrmControls
             // 
