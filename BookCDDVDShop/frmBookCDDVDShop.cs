@@ -76,7 +76,7 @@ namespace BookCDDVDShop
         {
             // Read serialized binary data file
             SerializationFile.readFromFile(ref thisProductList, FileName);
-            FormController.clear(this);
+            //FormController.clear(this);
 
             // get initial Tooltips
             toolTip1.SetToolTip(btnCreateBookCIS, ttCreateBookCIS);
@@ -144,6 +144,11 @@ namespace BookCDDVDShop
             }  // end if
             return true;
         }   // end Validate Product data
+
+        private void lblalert_Click(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
