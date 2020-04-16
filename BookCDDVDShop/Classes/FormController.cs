@@ -30,15 +30,10 @@ namespace BookCDDVDShop.Classes
         f.btnSaveUpdate.Enabled = false;
         f.btnEnterUPC.Enabled = true;
         f.btnCreateBook.Enabled = true;
-        f.btnCreateBook.Text = "Create Book";
         f.btnCreateBookCIS.Enabled = true;
-        f.btnCreateBookCIS.Text = "Create Book CIS";
         f.btnCreateCDOrchestra.Enabled = true;
-        f.btnCreateCDOrchestra.Text = "Create CD Orchestra";
         f.btnCreateCDChamber.Enabled = true;
-        f.btnCreateCDChamber.Text = "Create CD Chamber";
         f.btnCreateDVD.Enabled = true;
-        f.btnCreateDVD.Text = "Create DVD";
 
         // Reset group components
         f.grpProduct.Enabled = true;
@@ -76,6 +71,7 @@ namespace BookCDDVDShop.Classes
     // Deactivate all but Book
     public static void deactivateAllButBook(frmBookCDDVDShop f)
     {
+        FormController.deactivateCDClassical(f);
         FormController.deactivateCDOrchestra(f);
         FormController.deactivateBookCIS(f);
         FormController.deactivateCDChamber(f);
@@ -86,7 +82,6 @@ namespace BookCDDVDShop.Classes
     // Deactivate all but BookCIS
     public static void deactivateAllButBookCIS(frmBookCDDVDShop f)
     {
-        FormController.deactivateBook(f);
         FormController.deactivateCDOrchestra(f);
         FormController.deactivateCDChamber(f);
         FormController.deactivateDVD(f);
@@ -123,8 +118,6 @@ namespace BookCDDVDShop.Classes
         FormController.deactivateDVD(f);
         FormController.deactivateAddButtons(f);
     }  // end deactivateAllButCDOrchestra
-
-
 
 
     // Activates and deactivates necessary form buttons
@@ -166,6 +159,7 @@ namespace BookCDDVDShop.Classes
         f.grpProduct.Enabled = true;
         f.txtProductUPC.Enabled = true;
         f.txtProductUPC.Enabled = true;
+        f.txtProductPrice.Enabled = true;
         f.txtProductTitle.Enabled = true;
         f.txtProductQuantity.Enabled = true;
     }  // end activateProduct
@@ -186,6 +180,7 @@ namespace BookCDDVDShop.Classes
     {
         activateProduct(f);
         f.grpBook.Enabled = true;
+        f.txtBookISBNRight.Enabled = true;
         f.txtBookISBNLeft.Enabled = true;
         f.txtBookAuthor.Enabled = true;
         f.txtBookPages.Enabled = true;
@@ -269,7 +264,7 @@ namespace BookCDDVDShop.Classes
     {
         f.grpCDOrchestra.Enabled = false;
     }  // end deativateCDClOrch
-
+    
 
     // Disables textboxes groupbox
     public static void deactivateBookCIS(frmBookCDDVDShop f)

@@ -67,11 +67,6 @@ namespace BookCDDVDShop
             InitializeComponent();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmBookCDDVDShop_Load(object sender, EventArgs e)
         {
             // Read serialized binary data file
@@ -108,7 +103,6 @@ namespace BookCDDVDShop
             toolTip1.SetToolTip(txtCDChamberInstrumentList, ttCDChamberInstrumentList);
             toolTip1.SetToolTip(txtBookCISCISArea, ttBookCISCISArea);
             toolTip1.SetToolTip(btnCreateBookCIS, ttCreateBookCIS);
-
         }
 
         // Validate Product data
@@ -145,15 +139,179 @@ namespace BookCDDVDShop
             return true;
         }   // end Validate Product data
 
-        private void lblalert_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCreateBook_Click(object sender, EventArgs e)
         {
             FormController.activateBook(this);
-            FormController.deactivateAllButBook(this);
+            FormController.activateProduct(this);
+            btnCreateBookCIS.Enabled = true;
+            btnCreateCDChamber.Enabled = false;
+            btnCreateCDOrchestra.Enabled = false;
+            btnCreateDVD.Enabled = false;
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Number of records processed = " +
+                recordsProcessedCount.ToString(),
+                "Exit Message", MessageBoxButtons.OK);
+            MessageBox.Show("The list entries are ...", "Display List Entries");
+            //thisProductList.displayProductList();
+
+            // Save serialized binary file
+            SerializationFile.writeToFile(thisProductList, FileName);
+
+            this.Close();
+
+        }
+
+        private void btnCreateBookCIS_Click(object sender, EventArgs e)
+        {
+            FormController.activateBookCIS(this);
+        }
+
+        private void btnCreateDVD_Click(object sender, EventArgs e)
+        {
+            FormController.activateDVD(this);
+            btnCreateBook.Enabled = false;
+            btnCreateBookCIS.Enabled = true;
+            btnCreateCDChamber.Enabled = false;
+            btnCreateCDOrchestra.Enabled = false;
+        }
+
+        private void btnCreateCDOrchestra_Click(object sender, EventArgs e)
+        {
+            FormController.activateCDClassical(this);
+            FormController.activateCDOrchestra(this);
+            btnCreateBook.Enabled = false;
+            btnCreateBookCIS.Enabled = true;
+            btnCreateCDChamber.Enabled = false;
+            btnCreateDVD.Enabled = false;
+        }
+
+        private void btnCreateCDChamber_Click(object sender, EventArgs e)
+        {
+            FormController.activateCDClassical(this);
+            FormController.activateCDChamber(this);
+            btnCreateBook.Enabled = false;
+            btnCreateBookCIS.Enabled = true;
+            btnCreateDVD.Enabled = false;
+            btnCreateCDOrchestra.Enabled = false;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            FormController.clear(this);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //dbFunctions.Delete(Convert.ToInt32(txtProductUPC.Text));
+            FormController.resetForm(this);
+        }
+
+        private void btnEditUpdate_Click(object sender, EventArgs e)
+        {
+            bool success;
+            btnFindDisplay.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSaveUpdate.Enabled = false;
+            success = findAnItem("Edit/Update");
+            if (success)
+            {
+                btnSaveUpdate.Enabled = true;
+                btnEditUpdate.Enabled = false;
+
+                Product p = thisProductList.getAnItem(currentIndex);
+                txtProductPrice.Text = p.ProductPrice.ToString();
+                txtProductUPC.Text = p.ProductUPC.ToString();
+                txtProductQuantity.Text = p.ProductQuantity.ToString();
+                txtProductTitle.Text = p.ProductTitle.ToString();
+                MessageBox.Show("Edit/UPDATE current Product (as shown). Press Save Updates Button", "Edit/Update Notice",
+                    MessageBoxButtons.OK);
+                if (p.GetType() == typeof(CDChamber))
+                {
+                    FormController.activateCDChamber(this);
+                    FormController.deactivateAllButCDChamber(this);
+                    FormController.deactivateAddButtons(this);
+
+                    txtCDClassicalLabel.Text = ((CDClassical)p).CDClassicalLabel;
+                    txtCDClassicalArtists.Text = ((CDClassical)p).CDClassicalArtists;
+                    txtCDChamberInstrumentList.Text = ((CDChamber)p).getCDChamberInstrumentList();
+                }
+                else if (p.GetType() == typeof(CDOrchestra))
+                {
+                    FormController.activateCDOrchestra(this);
+                    FormController.deactivateAllButCDOrchestra(this);
+
+                    txtCDClassicalLabel.Text = ((CDClassical)p).CDClassicalLabel;
+                    txtCDClassicalArtists.Text = ((CDClassical)p).CDClassicalArtists;
+                    txtCDOrchestraConductor.Text = ((CDOrchestra)p).CDOrchestraConductor();
+                }
+                else if (p.GetType() == typeof(Book))
+                {
+                    FormController.activateBook(this);
+                    FormController.deactivateAllButBook(this);
+                    FormController.deactivateAddButtons(this);
+
+                    txtBookISBNLeft.Text = (((Book)p).BookISBNLeft).ToString();
+                    txtBookISBNRight.Text = (((Book)p).BookISBNRight).ToString();
+                    txtBookAuthor.Text = ((Book)p).BookAuthor;
+                    txtBookPages.Text = ((Book)p).BookPages.ToString();
+                }
+                else if (p.GetType() == typeof(BookCIS))
+                {
+                    FormController.activateBookCIS(this);
+                    FormController.deactivateAllButBookCIS(this);
+
+                    txtBookISBNLeft.Text = (((Book)p).BookISBNLeft).ToString();
+                    txtBookISBNRight.Text = (((Book)p).BookISBNRight).ToString();
+                    txtBookAuthor.Text = ((Book)p).BookAuthor;
+                    txtBookPages.Text = (((Book)p).BookPages).ToString();
+                    txtBookCISCISArea.Text = ((BookCIS)p).BookCISCISArea; ;
+                }  // end multiple alternative if
+
+                else if (p.GetType() == typeof(DVD))
+                {
+                    FormController.activateDVD(this);
+                    FormController.deactivateAllButDVD(this);
+
+                    txtDVDLeadActor.Text = ((DVD)p).DVDLeadActor;
+                    txtDVDReleaseDate.Text = ((DateTime)((DVD)p).DVDReleaseDate).ToString("mm/dd/yyyy");
+                    txtDVDRunTime.Text = (((DVD)p).DVDRunTime).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Fatal error. Data type not Book, BookCIS, DVD, DC Chamber or CD Orchestra. Program Terminated. ",
+                        "Mis-typed Object", MessageBoxButtons.OK);
+                    this.Close();
+                }  // end multiple alternative if
+            }  // end if on success
+        }
+
+
+        private void getItem(int i)
+        {
+            if (thisProductList.Count() == 0)
+            {
+                btnDelete.Enabled = false;
+                btnEditUpdate.Enabled = false;
+                // btnToString.Enabled = false;
+            }
+            else if (i < 0 || i >= thisProductList.Count())
+            {
+                MessageBox.Show("getItem error: index out of range");
+                return;
+            }
+            else
+            {
+                currentIndex = i;
+                //thisProductList.getAnItem(i).Display(this);
+                //lblUserMessage.Text = "Object Type: " + thisProductList.getAnItem(i).GetType().ToString() + " List Index: " + i.ToString();
+                btnFindDisplay.Enabled = true;
+                btnDelete.Enabled = true;
+                btnEditUpdate.Enabled = true;
+            }  // end else
+        } // end getItem
+
     }
 }
