@@ -35,7 +35,7 @@
             this.lblInstuments = new System.Windows.Forms.Label();
             this.grpCDOrchestra = new System.Windows.Forms.GroupBox();
             this.txtCDOrchestraConductor = new System.Windows.Forms.TextBox();
-            this.lblConstructor = new System.Windows.Forms.Label();
+            this.lblConductor = new System.Windows.Forms.Label();
             this.grpCDClassical = new System.Windows.Forms.GroupBox();
             this.txtCDClassicalArtists = new System.Windows.Forms.TextBox();
             this.lblArtist = new System.Windows.Forms.Label();
@@ -88,6 +88,8 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txtProductUPCSearch = new System.Windows.Forms.TextBox();
+            this.btnProductUPCSearch = new System.Windows.Forms.Button();
             this.grpProduct.SuspendLayout();
             this.grpCDChamber.SuspendLayout();
             this.grpCDOrchestra.SuspendLayout();
@@ -155,7 +157,7 @@
             // grpCDOrchestra
             // 
             this.grpCDOrchestra.Controls.Add(this.txtCDOrchestraConductor);
-            this.grpCDOrchestra.Controls.Add(this.lblConstructor);
+            this.grpCDOrchestra.Controls.Add(this.lblConductor);
             this.grpCDOrchestra.Enabled = false;
             this.grpCDOrchestra.Location = new System.Drawing.Point(18, 400);
             this.grpCDOrchestra.Name = "grpCDOrchestra";
@@ -171,14 +173,14 @@
             this.txtCDOrchestraConductor.Size = new System.Drawing.Size(166, 29);
             this.txtCDOrchestraConductor.TabIndex = 3;
             // 
-            // lblConstructor
+            // lblConductor
             // 
-            this.lblConstructor.AutoSize = true;
-            this.lblConstructor.Location = new System.Drawing.Point(16, 28);
-            this.lblConstructor.Name = "lblConstructor";
-            this.lblConstructor.Size = new System.Drawing.Size(104, 23);
-            this.lblConstructor.TabIndex = 2;
-            this.lblConstructor.Text = "Constructor";
+            this.lblConductor.AutoSize = true;
+            this.lblConductor.Location = new System.Drawing.Point(16, 28);
+            this.lblConductor.Name = "lblConductor";
+            this.lblConductor.Size = new System.Drawing.Size(95, 23);
+            this.lblConductor.TabIndex = 2;
+            this.lblConductor.Text = "Conductor";
             // 
             // grpCDClassical
             // 
@@ -647,6 +649,7 @@
             this.btnEnterUPC.TabIndex = 2;
             this.btnEnterUPC.Text = "Click HERE to enter a UPC";
             this.btnEnterUPC.UseVisualStyleBackColor = true;
+            this.btnEnterUPC.Click += new System.EventHandler(this.btnSearchUPC_Click);
             // 
             // lblalert2
             // 
@@ -692,12 +695,32 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // txtProductUPCSearch
+            // 
+            this.txtProductUPCSearch.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductUPCSearch.Location = new System.Drawing.Point(1079, 87);
+            this.txtProductUPCSearch.Name = "txtProductUPCSearch";
+            this.txtProductUPCSearch.Size = new System.Drawing.Size(146, 29);
+            this.txtProductUPCSearch.TabIndex = 18;
+            // 
+            // btnProductUPCSearch
+            // 
+            this.btnProductUPCSearch.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductUPCSearch.Location = new System.Drawing.Point(1088, 122);
+            this.btnProductUPCSearch.Name = "btnProductUPCSearch";
+            this.btnProductUPCSearch.Size = new System.Drawing.Size(129, 41);
+            this.btnProductUPCSearch.TabIndex = 19;
+            this.btnProductUPCSearch.Text = "Search UPC";
+            this.btnProductUPCSearch.UseVisualStyleBackColor = true;
+            // 
             // frmBookCDDVDShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BookCDDVDShop.Properties.Resources.old_background;
             this.ClientSize = new System.Drawing.Size(1258, 857);
+            this.Controls.Add(this.btnProductUPCSearch);
+            this.Controls.Add(this.txtProductUPCSearch);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.grpfrmControls);
@@ -739,7 +762,7 @@
         internal System.Windows.Forms.Label lblInstuments;
         internal System.Windows.Forms.GroupBox grpCDOrchestra;
         internal System.Windows.Forms.TextBox txtCDOrchestraConductor;
-        internal System.Windows.Forms.Label lblConstructor;
+        internal System.Windows.Forms.Label lblConductor;
         internal System.Windows.Forms.GroupBox grpCDClassical;
         internal System.Windows.Forms.TextBox txtCDClassicalArtists;
         internal System.Windows.Forms.Label lblArtist;
@@ -792,6 +815,8 @@
         internal System.Windows.Forms.Button btnExit;
         internal System.Windows.Forms.TextBox txtProductUPC;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox txtProductUPCSearch;
+        private System.Windows.Forms.Button btnProductUPCSearch;
     }
 }
 

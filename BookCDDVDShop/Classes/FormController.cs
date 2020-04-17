@@ -279,6 +279,10 @@ namespace BookCDDVDShop.Classes
         f.grpDVD.Enabled = false;
     }  // end deativateBookCIS
 
+    public static void searchForm(frmBookCDDVDShop f)
+    {
+
+    }
 
     // Clear all textboxes on the form
     public static void clear(frmBookCDDVDShop f)
