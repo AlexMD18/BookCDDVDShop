@@ -15,7 +15,7 @@ namespace BookCDDVDShop.Classes
             //^ - beginning of statement
             //$ - end of statement
             //This should allow all letters lowercase a-z, UPPERCASE A-Z and numbers 0-9. Length of 5.
-            Regex rx = new Regex("^[a-zA-Z0-9]{5}$");
+            Regex rx = new Regex("^[0-9]{5}$");
             return rx.IsMatch(productUPC);
         }
 
@@ -42,6 +42,12 @@ namespace BookCDDVDShop.Classes
         {
             Regex rx = new Regex("^[0-9]$");
             return rx.IsMatch(productQuantity);
+        }
+
+        public static bool validateBookISBN(string ISBN)
+        {
+            Regex rx = new Regex("^[0-9]{3}$");
+            return rx.IsMatch(ISBN);
         }
     }
 }
