@@ -17,6 +17,10 @@ namespace BookCDDVDShop.Classes
             this.productList = new ArrayList();
         }
 
+        public Product getAnItem(int i)
+        {
+            return null;
+        }
 
         public int Count()
         {

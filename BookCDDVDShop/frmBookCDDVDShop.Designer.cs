@@ -640,6 +640,7 @@
             this.btnFindDisplay.TabIndex = 3;
             this.btnFindDisplay.Text = "Find/Display";
             this.btnFindDisplay.UseVisualStyleBackColor = true;
+            this.btnFindDisplay.Click += new System.EventHandler(this.btnFindDisplay_Click);
             // 
             // btnEnterUPC
             // 
@@ -649,7 +650,6 @@
             this.btnEnterUPC.TabIndex = 2;
             this.btnEnterUPC.Text = "Click HERE to enter a UPC";
             this.btnEnterUPC.UseVisualStyleBackColor = true;
-            this.btnEnterUPC.Click += new System.EventHandler(this.btnSearchUPC_Click);
             // 
             // lblalert2
             // 
@@ -712,6 +712,7 @@
             this.btnProductUPCSearch.TabIndex = 19;
             this.btnProductUPCSearch.Text = "Search UPC";
             this.btnProductUPCSearch.UseVisualStyleBackColor = true;
+            this.btnProductUPCSearch.Click += new System.EventHandler(this.btnProductUPCSearch_Click);
             // 
             // frmBookCDDVDShop
             // 

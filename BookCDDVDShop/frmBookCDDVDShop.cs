@@ -22,7 +22,7 @@ namespace BookCDDVDShop
 
         int recordsProcessedCount = 0;
         // File to read or write to
-        string FileName = "PersistentObject.bin";
+        //string FileName = "PersistentObject.bin";
 
         // Database methods and attributes stored here
         ProductDB dbFunctions = new ProductDB();// Parameterless Constructor for fmrEmpMan
@@ -70,7 +70,7 @@ namespace BookCDDVDShop
         private void frmBookCDDVDShop_Load(object sender, EventArgs e)
         {
             // Read serialized binary data file
-            SerializationFile.readFromFile(ref thisProductList, FileName);
+            //SerializationFile.readFromFile(ref thisProductList, FileName);
             //FormController.clear(this);
 
             // get initial Tooltips
@@ -158,7 +158,7 @@ namespace BookCDDVDShop
             //thisProductList.displayProductList();
 
             // Save serialized binary file
-            SerializationFile.writeToFile(thisProductList, FileName);
+            //SerializationFile.writeToFile(thisProductList, FileName);
 
             this.Close();
 
@@ -288,6 +288,10 @@ namespace BookCDDVDShop
             }  // end if on success
         }
 
+        private bool findAnItem(string v)
+        {
+            throw new NotImplementedException();
+        }
 
         private void getItem(int i)
         {
@@ -313,7 +317,7 @@ namespace BookCDDVDShop
             }  // end else
         } // end getItem
 
-        private void btnSearchUPC_Click(object sender, EventArgs e)
+        private void btnProductUPCSearch_Click(object sender, EventArgs e)
         {
             bool temp = Validation.validateProductUPC(txtProductUPCSearch.Text); //first make sure the format is correct
             if (temp)
@@ -371,5 +375,11 @@ namespace BookCDDVDShop
                 // UPC is invalid
             }
         }
+
+        private void btnFindDisplay_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
