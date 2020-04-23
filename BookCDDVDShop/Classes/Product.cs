@@ -126,6 +126,8 @@ namespace BookCDDVDShop.Classes
             f.txtProductPrice.Text = hiddenPrice.ToString();
             f.txtProductTitle.Text = hiddenTitle;
             f.txtProductQuantity.Text = hiddenQuantity.ToString();
+            f.grpProduct.Enabled = true;
+            f.grpProduct.Visible = true;
         }  // end Display
 
 

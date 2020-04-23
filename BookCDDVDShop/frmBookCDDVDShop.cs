@@ -83,7 +83,6 @@ namespace BookCDDVDShop
             toolTip1.SetToolTip(btnClear, ttClear);
             toolTip1.SetToolTip(btnDelete, ttDelete);
             toolTip1.SetToolTip(btnEditUpdate, ttEdit);
-            toolTip1.SetToolTip(btnFindDisplay, ttFind);
             toolTip1.SetToolTip(btnExit, ttExit);
 
             toolTip1.SetToolTip(txtProductUPC, ttProductUPC);
@@ -147,6 +146,7 @@ namespace BookCDDVDShop
             btnCreateCDChamber.Enabled = false;
             btnCreateCDOrchestra.Enabled = false;
             btnCreateDVD.Enabled = false;
+            btnSave.Enabled = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -212,13 +212,12 @@ namespace BookCDDVDShop
         private void btnEditUpdate_Click(object sender, EventArgs e)
         {
             bool success;
-            btnFindDisplay.Enabled = false;
             btnDelete.Enabled = false;
-            btnSaveUpdate.Enabled = false;
+            btnSave.Enabled = false;
             success = findAnItem("Edit/Update");
             if (success)
             {
-                btnSaveUpdate.Enabled = true;
+                btnSave.Enabled = true;
                 btnEditUpdate.Enabled = false;
 
                 Product p = thisProductList.getAnItem(currentIndex);
@@ -311,7 +310,6 @@ namespace BookCDDVDShop
                 currentIndex = i;
                 //thisProductList.getAnItem(i).Display(this);
                 //lblUserMessage.Text = "Object Type: " + thisProductList.getAnItem(i).GetType().ToString() + " List Index: " + i.ToString();
-                btnFindDisplay.Enabled = true;
                 btnDelete.Enabled = true;
                 btnEditUpdate.Enabled = true;
             }  // end else
@@ -376,10 +374,14 @@ namespace BookCDDVDShop
             }
         }
 
-        private void btnFindDisplay_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
+            bool validated;
 
+            validated = Validation.validateProductUPC(txtProductUPC.Text) 
+                            && Validation.validateProductPrice(txtProductPrice.Text)
+                            && Validation.validateProductTitle(txtProductTitle.Text) 
+                            && Validation.validateProductQuantity(txtProductQuantity.Text);
         }
-
     }
 }

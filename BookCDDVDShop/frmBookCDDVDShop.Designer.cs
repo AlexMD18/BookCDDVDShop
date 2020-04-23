@@ -79,10 +79,8 @@
             this.btnCreateBook = new System.Windows.Forms.Button();
             this.grpfrmControls = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSaveUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnEditUpdate = new System.Windows.Forms.Button();
-            this.btnFindDisplay = new System.Windows.Forms.Button();
-            this.btnEnterUPC = new System.Windows.Forms.Button();
             this.lblalert2 = new System.Windows.Forms.Label();
             this.lblalert = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -589,67 +587,50 @@
             // grpfrmControls
             // 
             this.grpfrmControls.Controls.Add(this.btnDelete);
-            this.grpfrmControls.Controls.Add(this.btnSaveUpdate);
+            this.grpfrmControls.Controls.Add(this.btnSave);
             this.grpfrmControls.Controls.Add(this.btnEditUpdate);
-            this.grpfrmControls.Controls.Add(this.btnFindDisplay);
-            this.grpfrmControls.Controls.Add(this.btnEnterUPC);
             this.grpfrmControls.Controls.Add(this.lblalert2);
             this.grpfrmControls.Controls.Add(this.lblalert);
             this.grpfrmControls.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpfrmControls.Location = new System.Drawing.Point(54, 706);
             this.grpfrmControls.Name = "grpfrmControls";
-            this.grpfrmControls.Size = new System.Drawing.Size(1013, 139);
+            this.grpfrmControls.Size = new System.Drawing.Size(1013, 149);
             this.grpfrmControls.TabIndex = 15;
             this.grpfrmControls.TabStop = false;
             this.grpfrmControls.Text = "Form Controls for Data Processing";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(845, 71);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(829, 82);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(88, 34);
+            this.btnDelete.Size = new System.Drawing.Size(135, 53);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnSaveUpdate
+            // btnSave
             // 
-            this.btnSaveUpdate.Location = new System.Drawing.Point(646, 71);
-            this.btnSaveUpdate.Name = "btnSaveUpdate";
-            this.btnSaveUpdate.Size = new System.Drawing.Size(123, 34);
-            this.btnSaveUpdate.TabIndex = 5;
-            this.btnSaveUpdate.Text = "Save Updates";
-            this.btnSaveUpdate.UseVisualStyleBackColor = true;
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(416, 82);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(135, 53);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEditUpdate
             // 
-            this.btnEditUpdate.Location = new System.Drawing.Point(453, 71);
+            this.btnEditUpdate.Enabled = false;
+            this.btnEditUpdate.Location = new System.Drawing.Point(61, 82);
             this.btnEditUpdate.Name = "btnEditUpdate";
-            this.btnEditUpdate.Size = new System.Drawing.Size(126, 34);
+            this.btnEditUpdate.Size = new System.Drawing.Size(135, 53);
             this.btnEditUpdate.TabIndex = 4;
             this.btnEditUpdate.Text = "Edit/Update";
             this.btnEditUpdate.UseVisualStyleBackColor = true;
             this.btnEditUpdate.Click += new System.EventHandler(this.btnEditUpdate_Click);
-            // 
-            // btnFindDisplay
-            // 
-            this.btnFindDisplay.Location = new System.Drawing.Point(263, 71);
-            this.btnFindDisplay.Name = "btnFindDisplay";
-            this.btnFindDisplay.Size = new System.Drawing.Size(137, 34);
-            this.btnFindDisplay.TabIndex = 3;
-            this.btnFindDisplay.Text = "Find/Display";
-            this.btnFindDisplay.UseVisualStyleBackColor = true;
-            this.btnFindDisplay.Click += new System.EventHandler(this.btnFindDisplay_Click);
-            // 
-            // btnEnterUPC
-            // 
-            this.btnEnterUPC.Location = new System.Drawing.Point(18, 71);
-            this.btnEnterUPC.Name = "btnEnterUPC";
-            this.btnEnterUPC.Size = new System.Drawing.Size(205, 62);
-            this.btnEnterUPC.TabIndex = 2;
-            this.btnEnterUPC.Text = "Click HERE to enter a UPC";
-            this.btnEnterUPC.UseVisualStyleBackColor = true;
             // 
             // lblalert2
             // 
@@ -687,9 +668,9 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(1088, 282);
+            this.btnExit.Location = new System.Drawing.Point(1088, 278);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(127, 45);
+            this.btnExit.Size = new System.Drawing.Size(127, 62);
             this.btnExit.TabIndex = 17;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -806,10 +787,8 @@
         internal System.Windows.Forms.Button btnCreateBook;
         internal System.Windows.Forms.GroupBox grpfrmControls;
         internal System.Windows.Forms.Button btnDelete;
-        internal System.Windows.Forms.Button btnSaveUpdate;
+        internal System.Windows.Forms.Button btnSave;
         internal System.Windows.Forms.Button btnEditUpdate;
-        internal System.Windows.Forms.Button btnFindDisplay;
-        internal System.Windows.Forms.Button btnEnterUPC;
         internal System.Windows.Forms.Label lblalert2;
         internal System.Windows.Forms.Label lblalert;
         internal System.Windows.Forms.Button btnClear;

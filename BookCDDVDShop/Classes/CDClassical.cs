@@ -29,8 +29,8 @@ namespace BookCDDVDShop.Classes
         public CDClassical(int UPC, decimal price, string title, int quantity,
             string label, string artists) : base(UPC, price, title, quantity)
         {
-            hiddenLabel = "";
-            hiddenArtists = "";
+            hiddenLabel = label;
+            hiddenArtists = artists;
         }  // end Employee Parameterized Constructor
 
 
@@ -85,7 +85,7 @@ namespace BookCDDVDShop.Classes
         public override string ToString()
         {
             string s = base.ToString() + "\n";
-            s += "CDClassical Info: " + hiddenArtists + hiddenArtists;
+            s += "CDClassical Info: " + hiddenLabel + hiddenArtists;
             return s;
         }  // end ToString
 
