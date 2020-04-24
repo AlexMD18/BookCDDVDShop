@@ -15,6 +15,7 @@ namespace BookCDDVDShop
 {
     public partial class frmBookCDDVDShop : Form
     {
+        public string clickedBtn;
         ProductList thisProductList = new ProductList();
 
         // This index keeps track of the current Owl
@@ -121,14 +122,14 @@ namespace BookCDDVDShop
                 MessageBox.Show("Product Price not valid.  Please check that all data is entered and valid.");
                 return false;
             }  // end if
-            if (Validation.validateProductTitle(txtProductTitle.Text) == false)
+            if (Validation.validateAnything(txtProductTitle.Text) == false)
             {
                 txtProductTitle.Text = "";
                 txtProductTitle.Focus();
                 MessageBox.Show("Product Title not valid.  Please check that all data is entered and valid.");
                 return false;
             }  // end if
-            if (Validation.validateProductQuantity(txtProductQuantity.Text) == false)
+            if (Validation.validatePositiveInteger(txtProductQuantity.Text) == false)
             {
                 txtProductQuantity.Text = "";
                 txtProductQuantity.Focus();
@@ -147,6 +148,7 @@ namespace BookCDDVDShop
             btnCreateCDOrchestra.Enabled = false;
             btnCreateDVD.Enabled = false;
             btnSave.Enabled = true;
+            clickedBtn = "create_book";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -167,15 +169,27 @@ namespace BookCDDVDShop
         private void btnCreateBookCIS_Click(object sender, EventArgs e)
         {
             FormController.activateBookCIS(this);
+            clickedBtn = "create_book_CIS";
         }
 
         private void btnCreateDVD_Click(object sender, EventArgs e)
         {
             FormController.activateDVD(this);
             btnCreateBook.Enabled = false;
-            btnCreateBookCIS.Enabled = true;
+            btnCreateBookCIS.Enabled = false;
             btnCreateCDChamber.Enabled = false;
             btnCreateCDOrchestra.Enabled = false;
+            clickedBtn = "create_DVD";
+        }
+
+        private void btnCreateCDClassical_Click(object sender, EventArgs e)
+        {
+            FormController.activateCDClassical(this);
+            btnCreateBook.Enabled = false;
+            btnCreateBookCIS.Enabled = false;
+            btnCreateCDChamber.Enabled = true;
+            btnCreateCDOrchestra.Enabled = true;
+            clickedBtn = "create_CD_classical";
         }
 
         private void btnCreateCDOrchestra_Click(object sender, EventArgs e)
@@ -183,9 +197,10 @@ namespace BookCDDVDShop
             FormController.activateCDClassical(this);
             FormController.activateCDOrchestra(this);
             btnCreateBook.Enabled = false;
-            btnCreateBookCIS.Enabled = true;
+            btnCreateBookCIS.Enabled = false;
             btnCreateCDChamber.Enabled = false;
             btnCreateDVD.Enabled = false;
+            clickedBtn = "createCDOrchestra";
         }
 
         private void btnCreateCDChamber_Click(object sender, EventArgs e)
@@ -193,9 +208,10 @@ namespace BookCDDVDShop
             FormController.activateCDClassical(this);
             FormController.activateCDChamber(this);
             btnCreateBook.Enabled = false;
-            btnCreateBookCIS.Enabled = true;
+            btnCreateBookCIS.Enabled = false;
             btnCreateDVD.Enabled = false;
             btnCreateCDOrchestra.Enabled = false;
+            clickedBtn = "createCDChamber";
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -376,12 +392,97 @@ namespace BookCDDVDShop
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bool validated;
+            bool productValidated;
 
-            validated = Validation.validateProductUPC(txtProductUPC.Text) 
-                            && Validation.validateProductPrice(txtProductPrice.Text)
-                            && Validation.validateProductTitle(txtProductTitle.Text) 
-                            && Validation.validateProductQuantity(txtProductQuantity.Text);
+            productValidated = Validation.validateProductUPC(txtProductUPC.Text) 
+                               && Validation.validateProductPrice(txtProductPrice.Text)
+                               && Validation.validateAnything(txtProductTitle.Text) 
+                               && Validation.validatePositiveInteger(txtProductQuantity.Text);
+
+            if(productValidated == false)
+            {
+                MessageBox.Show("You have errors with your product information! Please check the product information and try again.");
+            }
+            else
+            {
+                bool found; // boolean reference for search success
+                string pstring; // Product string updated upon product DB search call.
+                //Product prod;
+
+                OleDbDataReader odb = dbFunctions.SelectProductFromProduct(Convert.ToInt32(txtProductUPC.Text), out found, out pstring);
+
+                if (!found)
+                {
+                    if (clickedBtn == "create_book")
+                    {
+                        bool bookValidated;
+
+                        bookValidated = Validation.validateBookISBN(txtBookISBNLeft.Text) &&
+                                        Validation.validateBookISBN(txtBookISBNRight.Text) &&
+                                        Validation.validatePersonName(txtBookAuthor.Text) &&
+                                        Validation.validatePositiveInteger(txtBookPages.Text);
+
+                        if(bookValidated == true)
+                        {
+                            Book saveBook = new Book(Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                     txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), 
+                                                     Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToInt32(txtBookISBNRight.Text),
+                                                     txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text));
+
+                            dbFunctions.InsertProduct(Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                     txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), "Book");
+                            dbFunctions.InsertBook(Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToInt32(txtBookISBNRight.Text),
+                                                     txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text));
+
+                            MessageBox.Show("Book successfully inserted into database!");
+                            FormController.clear(this);
+                        }
+                        else
+                        {
+                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!");
+                        }
+
+                    }
+                    else if (clickedBtn == "create_book_CIS")
+                    {
+                        bool bookCISValidated;
+
+                        bookCISValidated = Validation.validateBookISBN(txtBookISBNLeft.Text) &&
+                                        Validation.validateBookISBN(txtBookISBNRight.Text) &&
+                                        Validation.validatePersonName(txtBookAuthor.Text) &&
+                                        Validation.validatePositiveInteger(txtBookPages.Text) &&
+                                        Validation.validateAnything(txtBookCISCISArea.Text);
+                    }
+                    else if (clickedBtn == "create_DVD")
+                    {
+                        bool dvdValidated;
+
+                        dvdValidated = Validation.validatePersonName(txtDVDLeadActor.Text) &&
+                                       Validation.validateDate(Convert.ToDateTime(txtDVDReleaseDate.Text)) &&
+                                       Validation.validatePositiveInteger(txtDVDRunTime.Text);
+                    }
+                    else if (clickedBtn == "create_CD_classical")
+                    {
+                        bool classicalValidated;
+
+                        classicalValidated = Validation.validateAnything(txtCDClassicalLabel.Text) &&
+                                             Validation.validatePersonName(txtCDClassicalArtists.Text);
+                    }
+                    else if (clickedBtn == "create_CD_chamber")
+                    {
+                        bool chamberValidated;
+
+                        chamberValidated = Validation.validateAnything(txtCDChamberInstrumentList.Text);
+                    }
+                    else if (clickedBtn == "create_CD_orchestra")
+                    {
+                        bool orchestraValidated;
+
+                        orchestraValidated = Validation.validatePersonName(txtCDOrchestraConductor.Text);
+                    }
+                }
+            }
         }
+
     }
 }

@@ -31,16 +31,16 @@ namespace BookCDDVDShop.Classes
         }
 
         //This method will validate the title for the product. There are few rules for the title becides it must not be null.
-        public static bool validateProductTitle(string productTitle)
+        public static bool validateAnything(string productTitle)
         {
             //Allows title to be anything of any length
             Regex rx = new Regex("^.*$");
             return rx.IsMatch(productTitle);
         }
 
-        public static bool validateProductQuantity(string productQuantity)
+        public static bool validatePositiveInteger(string productQuantity)
         {
-            Regex rx = new Regex("^[0-9]$");
+            Regex rx = new Regex("^[1-9]$");
             return rx.IsMatch(productQuantity);
         }
 
@@ -49,5 +49,21 @@ namespace BookCDDVDShop.Classes
             Regex rx = new Regex("^[0-9]{3}$");
             return rx.IsMatch(ISBN);
         }
+
+        public static bool validatePersonName(string author)
+        {
+            Regex rx = new Regex("^[a-zA-Z]+((\\s[a-zA-Z ])?[',.\\s-]?[a-zA-Z]*)$");
+            return rx.IsMatch(author);
+        }
+
+        public static bool validateDate(DateTime releaseDate)
+        {
+            DateTime oldest = DateTime.Parse("03/26/1997");
+            DateTime newest = DateTime.Parse("04/30/2020");
+
+            bool validDate = (releaseDate.Date >= oldest.Date) && (releaseDate.Date <= newest.Date);
+            return validDate;
+        }
+
     }
 }

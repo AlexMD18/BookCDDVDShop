@@ -733,7 +733,7 @@ namespace BookCDDVDShop.Classes
         {
             string strUpdateFaculty = "UPDATE Book SET " +
                                     "fldISBN = " + ISBN + " fldAuthor = '" + author + "' fldPages = " + pages +
-                                    "WHERE fldId = " + UPC;
+                                    "WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
             OleDbCommand myCommand = new OleDbCommand(strUpdateFaculty, myConnection);
@@ -814,7 +814,7 @@ namespace BookCDDVDShop.Classes
         {
             // string strUpdateCDClassical = "SELECT * FROM CDClassical WHERE CDClassical.CDClassicalID = " + ProductUPC; // string select statement
             string strUpdateCDClassical = "UPDATE CDClassical SET fldLabel = '" + label + "' , fldArtist = '" + artist + "'" +
-                                       " WHERE fldId = " + UPC;
+                                       " WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
             OleDbCommand myCommand = new OleDbCommand(strUpdateCDClassical, myConnection);
@@ -841,7 +841,7 @@ namespace BookCDDVDShop.Classes
         {
             string strUpdateCDChamber =
                 "UPDATE CDChamber SET fldInstrumentList = '" + instrumentList + "' " +
-                " WHERE fldId = " + UPC;
+                " WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
             OleDbCommand myCommand = new OleDbCommand(strUpdateCDChamber, myConnection);
@@ -868,7 +868,7 @@ namespace BookCDDVDShop.Classes
         {
             string strUpdateCDOrchestra =
                 "UPDATE CDOrchestra SET fldConductor = '" + conductor + "' " +
-                " WHERE fldId = " + UPC;
+                " WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
             OleDbCommand myCommand = new OleDbCommand(strUpdateCDOrchestra, myConnection);
@@ -938,7 +938,7 @@ namespace BookCDDVDShop.Classes
                     {
                         OleDbDataReader reader = command6.ExecuteReader();
                     }
-                    using (OleDbCommand command7 = new OleDbCommand("DELETE FROM ChairProduct WHERE fldUPC = " + UPC, connection))
+                    using (OleDbCommand command7 = new OleDbCommand("DELETE FROM CDOrchestra WHERE fldUPC = " + UPC, connection))
                     {
                         OleDbDataReader reader = command7.ExecuteReader();
                     }

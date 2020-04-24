@@ -88,6 +88,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtProductUPCSearch = new System.Windows.Forms.TextBox();
             this.btnProductUPCSearch = new System.Windows.Forms.Button();
+            this.btnCreateCDClassical = new System.Windows.Forms.Button();
             this.grpProduct.SuspendLayout();
             this.grpCDChamber.SuspendLayout();
             this.grpCDOrchestra.SuspendLayout();
@@ -519,6 +520,7 @@
             // 
             this.grpControls.BackColor = System.Drawing.Color.Transparent;
             this.grpControls.BackgroundImage = global::BookCDDVDShop.Properties.Resources.old_background;
+            this.grpControls.Controls.Add(this.btnCreateCDClassical);
             this.grpControls.Controls.Add(this.btnCreateCDChamber);
             this.grpControls.Controls.Add(this.btnCreateCDOrchestra);
             this.grpControls.Controls.Add(this.btnCreateDVD);
@@ -537,7 +539,7 @@
             // 
             this.btnCreateCDChamber.Location = new System.Drawing.Point(856, 16);
             this.btnCreateCDChamber.Name = "btnCreateCDChamber";
-            this.btnCreateCDChamber.Size = new System.Drawing.Size(139, 55);
+            this.btnCreateCDChamber.Size = new System.Drawing.Size(149, 55);
             this.btnCreateCDChamber.TabIndex = 4;
             this.btnCreateCDChamber.Text = "Create CD Chamber";
             this.btnCreateCDChamber.UseVisualStyleBackColor = true;
@@ -545,9 +547,9 @@
             // 
             // btnCreateCDOrchestra
             // 
-            this.btnCreateCDOrchestra.Location = new System.Drawing.Point(646, 16);
+            this.btnCreateCDOrchestra.Location = new System.Drawing.Point(688, 16);
             this.btnCreateCDOrchestra.Name = "btnCreateCDOrchestra";
-            this.btnCreateCDOrchestra.Size = new System.Drawing.Size(136, 55);
+            this.btnCreateCDOrchestra.Size = new System.Drawing.Size(149, 55);
             this.btnCreateCDOrchestra.TabIndex = 3;
             this.btnCreateCDOrchestra.Text = "Create CD Orchestra";
             this.btnCreateCDOrchestra.UseVisualStyleBackColor = true;
@@ -555,9 +557,9 @@
             // 
             // btnCreateDVD
             // 
-            this.btnCreateDVD.Location = new System.Drawing.Point(430, 21);
+            this.btnCreateDVD.Location = new System.Drawing.Point(357, 21);
             this.btnCreateDVD.Name = "btnCreateDVD";
-            this.btnCreateDVD.Size = new System.Drawing.Size(149, 44);
+            this.btnCreateDVD.Size = new System.Drawing.Size(149, 55);
             this.btnCreateDVD.TabIndex = 2;
             this.btnCreateDVD.Text = "Create DVD";
             this.btnCreateDVD.UseVisualStyleBackColor = true;
@@ -566,9 +568,9 @@
             // btnCreateBookCIS
             // 
             this.btnCreateBookCIS.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateBookCIS.Location = new System.Drawing.Point(223, 21);
+            this.btnCreateBookCIS.Location = new System.Drawing.Point(185, 21);
             this.btnCreateBookCIS.Name = "btnCreateBookCIS";
-            this.btnCreateBookCIS.Size = new System.Drawing.Size(152, 44);
+            this.btnCreateBookCIS.Size = new System.Drawing.Size(149, 55);
             this.btnCreateBookCIS.TabIndex = 1;
             this.btnCreateBookCIS.Text = "Create CIS Book";
             this.btnCreateBookCIS.UseVisualStyleBackColor = true;
@@ -578,7 +580,7 @@
             // 
             this.btnCreateBook.Location = new System.Drawing.Point(18, 21);
             this.btnCreateBook.Name = "btnCreateBook";
-            this.btnCreateBook.Size = new System.Drawing.Size(149, 44);
+            this.btnCreateBook.Size = new System.Drawing.Size(149, 55);
             this.btnCreateBook.TabIndex = 0;
             this.btnCreateBook.Text = "Create Book";
             this.btnCreateBook.UseVisualStyleBackColor = true;
@@ -695,6 +697,16 @@
             this.btnProductUPCSearch.UseVisualStyleBackColor = true;
             this.btnProductUPCSearch.Click += new System.EventHandler(this.btnProductUPCSearch_Click);
             // 
+            // btnCreateCDClassical
+            // 
+            this.btnCreateCDClassical.Location = new System.Drawing.Point(519, 16);
+            this.btnCreateCDClassical.Name = "btnCreateCDClassical";
+            this.btnCreateCDClassical.Size = new System.Drawing.Size(149, 55);
+            this.btnCreateCDClassical.TabIndex = 5;
+            this.btnCreateCDClassical.Text = "Create CD Classical";
+            this.btnCreateCDClassical.UseVisualStyleBackColor = true;
+            this.btnCreateCDClassical.Click += new System.EventHandler(this.btnCreateCDClassical_Click);
+            // 
             // frmBookCDDVDShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -797,6 +809,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox txtProductUPCSearch;
         private System.Windows.Forms.Button btnProductUPCSearch;
+        internal System.Windows.Forms.Button btnCreateCDClassical;
     }
 }
 
