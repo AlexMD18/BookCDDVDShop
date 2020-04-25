@@ -401,7 +401,7 @@ namespace BookCDDVDShop
 
             if(productValidated == false)
             {
-                MessageBox.Show("You have errors with your product information! Please check the product information and try again.");
+                MessageBox.Show("You have errors with your product information! Please check the product information and try again.", "Product Input Error");
             }
             else
             {
@@ -424,14 +424,14 @@ namespace BookCDDVDShop
 
                         if(bookValidated == true)
                         {
-                            Book saveBook = new Book(Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToDecimal(txtProductPrice.Text),
+                            Book saveBook = new Book(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
                                                      txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), 
                                                      Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToInt32(txtBookISBNRight.Text),
                                                      txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text));
 
-                            dbFunctions.InsertProduct(Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToDecimal(txtProductPrice.Text),
+                            dbFunctions.InsertProduct(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
                                                      txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), "Book");
-                            dbFunctions.InsertBook(Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToInt32(txtBookISBNRight.Text),
+                            dbFunctions.InsertBook(Convert.ToInt32(txtProductUPC.Text), Convert.ToInt32(txtBookISBNLeft.Text + txtBookISBNRight.Text),
                                                      txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text));
 
                             MessageBox.Show("Book successfully inserted into database!");
@@ -448,10 +448,30 @@ namespace BookCDDVDShop
                         bool bookCISValidated;
 
                         bookCISValidated = Validation.validateBookISBN(txtBookISBNLeft.Text) &&
-                                        Validation.validateBookISBN(txtBookISBNRight.Text) &&
-                                        Validation.validatePersonName(txtBookAuthor.Text) &&
-                                        Validation.validatePositiveInteger(txtBookPages.Text) &&
-                                        Validation.validateAnything(txtBookCISCISArea.Text);
+                                           Validation.validateBookISBN(txtBookISBNRight.Text) &&
+                                           Validation.validatePersonName(txtBookAuthor.Text) &&
+                                           Validation.validatePositiveInteger(txtBookPages.Text) &&
+                                           Validation.validateAnything(txtBookCISCISArea.Text);
+
+                        if(bookCISValidated == true)
+                        {
+                            BookCIS saveCISBook = new BookCIS(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                     txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text),
+                                                     Convert.ToInt32(txtBookISBNLeft.Text), Convert.ToInt32(txtBookISBNRight.Text),
+                                                     txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text), txtBookCISCISArea.Text);
+
+                            dbFunctions.InsertProduct(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                    txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), "BookCIS");
+
+                            dbFunctions.InsertBook(Convert.ToInt32(txtProductUPC.Text), Convert.ToInt32(txtBookISBNLeft.Text + txtBookISBNRight.Text),
+                                                     txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text));
+
+                            dbFunctions.InsertBookCIS(Convert.ToInt32(txtProductUPC.Text), txtBookCISCISArea.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!");
+                        }
                     }
                     else if (clickedBtn == "create_DVD")
                     {

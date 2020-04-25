@@ -306,7 +306,14 @@ namespace BookCDDVDShop.Classes
             {
                 myConnection.Open();
                 myDataReader = myCommand.ExecuteReader();
-                if (myDataReader.HasRows == false) OKFlag = false;
+                if (myDataReader.HasRows == false)
+                {
+                    OKFlag = false;
+                    myConnection.Close();
+                    fieldsOut = fieldsFound;
+                    myDataReader = null;
+                    return myDataReader;
+                }
                 else OKFlag = true;
 
                 myDataReader.Read();

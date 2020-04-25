@@ -11,12 +11,12 @@ namespace BookCDDVDShop.Classes
     {
         private string hiddenCISArea;
 
-        BookCIS()
+        public BookCIS()
         {
             this.hiddenCISArea = "";
         }
 
-        BookCIS(int UPC, decimal price, string title, int quantity, int ISBNLeft, int ISBNRight, string author, int pages, string CISArea)
+        public BookCIS(int UPC, decimal price, string title, int quantity, int ISBNLeft, int ISBNRight, string author, int pages, string CISArea)
             : base(UPC, price, title, quantity, ISBNLeft, ISBNRight, author, pages)
         {
             hiddenCISArea = CISArea;

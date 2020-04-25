@@ -15,7 +15,7 @@ namespace BookCDDVDShop.Classes
             //^ - beginning of statement
             //$ - end of statement
             //This should allow all letters lowercase a-z, UPPERCASE A-Z and numbers 0-9. Length of 5.
-            Regex rx = new Regex("^[0-9]{5}$");
+            Regex rx = new Regex("^\\d{5}$");
             return rx.IsMatch(productUPC);
         }
 
@@ -26,7 +26,7 @@ namespace BookCDDVDShop.Classes
             //^ - beginning of statement
             //$ - end of statement
             //any digit + decimal + any digit up to 2 digits in length
-            Regex rx = new Regex("^(\\d+\\.\\d{1,2})");
+            Regex rx = new Regex("^\\d+(,\\d{3})*(\\.\\d{1,2})?$");
             return rx.IsMatch(productPrice);
         }
 
@@ -34,13 +34,13 @@ namespace BookCDDVDShop.Classes
         public static bool validateAnything(string productTitle)
         {
             //Allows title to be anything of any length
-            Regex rx = new Regex("^.*$");
+            Regex rx = new Regex("^(?s).*$");
             return rx.IsMatch(productTitle);
         }
 
         public static bool validatePositiveInteger(string productQuantity)
         {
-            Regex rx = new Regex("^[1-9]$");
+            Regex rx = new Regex("^[1-9]\\d*$");
             return rx.IsMatch(productQuantity);
         }
 
