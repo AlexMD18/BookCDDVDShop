@@ -480,29 +480,96 @@ namespace BookCDDVDShop
                         dvdValidated = Validation.validatePersonName(txtDVDLeadActor.Text) &&
                                        Validation.validateDate(Convert.ToDateTime(txtDVDReleaseDate.Text)) &&
                                        Validation.validatePositiveInteger(txtDVDRunTime.Text);
+
+                        if (dvdValidated == true)
+                        {
+                            DVD saveDVD = new DVD(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                     txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text),
+                                                     txtDVDLeadActor.Text, Convert.ToDateTime(txtDVDReleaseDate.Text), 
+                                                     Convert.ToInt32(txtDVDRunTime.Text));
+
+                            dbFunctions.InsertProduct(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                    txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), "DVD");
+
+                            dbFunctions.InsertDVD(Convert.ToInt32(txtProductUPC.Text), txtDVDLeadActor.Text, 
+                                                  Convert.ToDateTime(txtDVDReleaseDate.Text), Convert.ToInt32(txtDVDRunTime.Text));
+                        }
+                        else
+                        {
+                            MessageBox.Show("There was a problem inserting the DVD into the file. Check the entered information and try again!");
+                        }
                     }
-                    else if (clickedBtn == "create_CD_classical")
+                    /*else if (clickedBtn == "create_CD_classical")
                     {
                         bool classicalValidated;
 
                         classicalValidated = Validation.validateAnything(txtCDClassicalLabel.Text) &&
                                              Validation.validatePersonName(txtCDClassicalArtists.Text);
-                    }
+
+                        if (classicalValidated == true)
+                        {
+                            CDClassical saveClassical = new CDClassical(Convert.ToInt32(txtProductUPC.Text), 
+                                                       Convert.ToDecimal(txtProductPrice.Text),
+                                                       txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text),
+                                                       txtDVDLeadActor.Text, Convert.ToDateTime(txtDVDReleaseDate.Text),
+                                                       Convert.ToInt32(txtDVDRunTime.Text));
+
+                            dbFunctions.InsertProduct(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                    txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), "DVD");
+
+                            dbFunctions.InsertDVD(Convert.ToInt32(txtProductUPC.Text), txtDVDLeadActor.Text,
+                                                  Convert.ToDateTime(txtDVDReleaseDate.Text), Convert.ToInt32(txtDVDRunTime.Text));
+                        }
+                        else
+                        {
+                            MessageBox.Show("There was a problem inserting the classical CD into the file. Check the entered information and try again!");
+                        }
+                    }*/
                     else if (clickedBtn == "create_CD_chamber")
                     {
                         bool chamberValidated;
 
-                        chamberValidated = Validation.validateAnything(txtCDChamberInstrumentList.Text);
+                        chamberValidated = Validation.validateAnything(txtCDClassicalLabel.Text) &&
+                                           Validation.validatePersonName(txtCDClassicalArtists.Text) && 
+                                           Validation.validateAnything(txtCDChamberInstrumentList.Text);
+
+                        if(chamberValidated == true)
+                        {
+                            dbFunctions.InsertProduct(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                      txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), "CDChamber");
+                            dbFunctions.InsertCDClassical(Convert.ToInt32(txtProductUPC.Text), txtCDClassicalLabel.Text, txtCDClassicalArtists.Text);
+
+                            dbFunctions.InsertCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("There was a problem inserting the chamber CD into the file. Check the entered information and try again!");
+                        }
                     }
                     else if (clickedBtn == "create_CD_orchestra")
                     {
                         bool orchestraValidated;
 
-                        orchestraValidated = Validation.validatePersonName(txtCDOrchestraConductor.Text);
+                        orchestraValidated = Validation.validateAnything(txtCDClassicalLabel.Text) &&
+                                             Validation.validatePersonName(txtCDClassicalArtists.Text) && 
+                                             Validation.validatePersonName(txtCDOrchestraConductor.Text);
+
+                        if (orchestraValidated == true)
+                        {
+                            dbFunctions.InsertProduct(Convert.ToInt32(txtProductUPC.Text), Convert.ToDecimal(txtProductPrice.Text),
+                                                      txtProductTitle.Text, Convert.ToInt32(txtProductQuantity.Text), "CDOrchestra");
+
+                            dbFunctions.InsertCDClassical(Convert.ToInt32(txtProductUPC.Text), txtCDClassicalLabel.Text, txtCDClassicalArtists.Text);
+
+                            dbFunctions.InsertCDOrchestra(Convert.ToInt32(txtProductUPC.Text), txtCDOrchestraConductor.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("There was a problem inserting the orchestra CD into the file. Check the entered information and try again!");
+                        }
                     }
                 }
             }
         }
-
     }
 }
