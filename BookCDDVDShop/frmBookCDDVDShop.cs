@@ -170,6 +170,7 @@ namespace BookCDDVDShop
         {
             FormController.activateBookCIS(this);
             clickedBtn = "create_book_CIS";
+            btnSave.Enabled = true;
         }
 
         private void btnCreateDVD_Click(object sender, EventArgs e)
@@ -563,6 +564,9 @@ namespace BookCDDVDShop
 
                             dbFunctions.InsertDVD(Convert.ToInt32(txtProductUPC.Text), txtDVDLeadActor.Text,
                                                   Convert.ToDateTime(txtDVDReleaseDate.Text), Convert.ToInt32(txtDVDRunTime.Text));
+
+                            MessageBox.Show("DVD successfully inserted into database!");
+                            FormController.clear(this);
                         }
                         else
                         {
@@ -610,6 +614,9 @@ namespace BookCDDVDShop
                             dbFunctions.InsertCDClassical(Convert.ToInt32(txtProductUPC.Text), txtCDClassicalLabel.Text, txtCDClassicalArtists.Text);
 
                             dbFunctions.InsertCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
+
+                            MessageBox.Show("CDChamber successfully inserted into database!");
+                            FormController.clear(this);
                         }
                         else
                         {
