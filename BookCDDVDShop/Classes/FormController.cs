@@ -32,6 +32,7 @@ namespace BookCDDVDShop.Classes
             f.btnCreateCDOrchestra.Enabled = true;
             f.btnCreateCDChamber.Enabled = true;
             f.btnCreateDVD.Enabled = true;
+            f.btnProductUPCSearch.Enabled = true;
 
             // Reset group components
             f.grpProduct.Enabled = true;
@@ -278,7 +279,15 @@ namespace BookCDDVDShop.Classes
 
         public static void searchForm(frmBookCDDVDShop f)
         {
+            f.btnCreateBook.Enabled = false;
+            f.btnCreateBookCIS.Enabled = false;
+            f.btnCreateCDChamber.Enabled = false;
+            f.btnCreateCDOrchestra.Enabled = false;
+            f.btnCreateDVD.Enabled = false;
+            f.btnEditUpdate.Enabled = true;
 
+            f.txtProductUPCSearch.Clear();
+            f.btnProductUPCSearch.Enabled = false;
         }
 
         // Clear all textboxes on the form

@@ -88,7 +88,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtProductUPCSearch = new System.Windows.Forms.TextBox();
             this.btnProductUPCSearch = new System.Windows.Forms.Button();
-            this.btnCreateCDClassical = new System.Windows.Forms.Button();
             this.grpProduct.SuspendLayout();
             this.grpCDChamber.SuspendLayout();
             this.grpCDOrchestra.SuspendLayout();
@@ -117,7 +116,7 @@
             this.grpProduct.Controls.Add(this.txtProductUPC);
             this.grpProduct.Controls.Add(this.lblUPC);
             this.grpProduct.Enabled = false;
-            this.grpProduct.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpProduct.Location = new System.Drawing.Point(54, 197);
             this.grpProduct.Name = "grpProduct";
             this.grpProduct.Size = new System.Drawing.Size(1013, 487);
@@ -141,7 +140,7 @@
             // 
             this.txtCDChamberInstrumentList.Location = new System.Drawing.Point(135, 25);
             this.txtCDChamberInstrumentList.Name = "txtCDChamberInstrumentList";
-            this.txtCDChamberInstrumentList.Size = new System.Drawing.Size(203, 29);
+            this.txtCDChamberInstrumentList.Size = new System.Drawing.Size(203, 28);
             this.txtCDChamberInstrumentList.TabIndex = 3;
             // 
             // lblInstuments
@@ -149,7 +148,7 @@
             this.lblInstuments.AutoSize = true;
             this.lblInstuments.Location = new System.Drawing.Point(16, 28);
             this.lblInstuments.Name = "lblInstuments";
-            this.lblInstuments.Size = new System.Drawing.Size(104, 23);
+            this.lblInstuments.Size = new System.Drawing.Size(117, 24);
             this.lblInstuments.TabIndex = 2;
             this.lblInstuments.Text = "Instruments";
             // 
@@ -169,7 +168,7 @@
             // 
             this.txtCDOrchestraConductor.Location = new System.Drawing.Point(132, 25);
             this.txtCDOrchestraConductor.Name = "txtCDOrchestraConductor";
-            this.txtCDOrchestraConductor.Size = new System.Drawing.Size(166, 29);
+            this.txtCDOrchestraConductor.Size = new System.Drawing.Size(166, 28);
             this.txtCDOrchestraConductor.TabIndex = 3;
             // 
             // lblConductor
@@ -177,7 +176,7 @@
             this.lblConductor.AutoSize = true;
             this.lblConductor.Location = new System.Drawing.Point(16, 28);
             this.lblConductor.Name = "lblConductor";
-            this.lblConductor.Size = new System.Drawing.Size(95, 23);
+            this.lblConductor.Size = new System.Drawing.Size(107, 24);
             this.lblConductor.TabIndex = 2;
             this.lblConductor.Text = "Conductor";
             // 
@@ -199,7 +198,7 @@
             // 
             this.txtCDClassicalArtists.Location = new System.Drawing.Point(346, 25);
             this.txtCDClassicalArtists.Name = "txtCDClassicalArtists";
-            this.txtCDClassicalArtists.Size = new System.Drawing.Size(249, 29);
+            this.txtCDClassicalArtists.Size = new System.Drawing.Size(249, 28);
             this.txtCDClassicalArtists.TabIndex = 5;
             // 
             // lblArtist
@@ -207,7 +206,7 @@
             this.lblArtist.AutoSize = true;
             this.lblArtist.Location = new System.Drawing.Point(287, 28);
             this.lblArtist.Name = "lblArtist";
-            this.lblArtist.Size = new System.Drawing.Size(53, 23);
+            this.lblArtist.Size = new System.Drawing.Size(56, 24);
             this.lblArtist.TabIndex = 4;
             this.lblArtist.Text = "Artist";
             // 
@@ -215,16 +214,16 @@
             // 
             this.txtCDClassicalLabel.Location = new System.Drawing.Point(78, 25);
             this.txtCDClassicalLabel.Name = "txtCDClassicalLabel";
-            this.txtCDClassicalLabel.Size = new System.Drawing.Size(173, 29);
+            this.txtCDClassicalLabel.Size = new System.Drawing.Size(173, 28);
             this.txtCDClassicalLabel.TabIndex = 3;
             // 
             // lblLabel
             // 
             this.lblLabel.AutoSize = true;
-            this.lblLabel.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLabel.Location = new System.Drawing.Point(16, 28);
             this.lblLabel.Name = "lblLabel";
-            this.lblLabel.Size = new System.Drawing.Size(52, 23);
+            this.lblLabel.Size = new System.Drawing.Size(61, 24);
             this.lblLabel.TabIndex = 2;
             this.lblLabel.Text = "Label";
             // 
@@ -248,16 +247,16 @@
             // 
             this.txtDVDRunTime.Location = new System.Drawing.Point(881, 25);
             this.txtDVDRunTime.Name = "txtDVDRunTime";
-            this.txtDVDRunTime.Size = new System.Drawing.Size(78, 29);
+            this.txtDVDRunTime.Size = new System.Drawing.Size(78, 28);
             this.txtDVDRunTime.TabIndex = 7;
             // 
             // lblRunTime
             // 
             this.lblRunTime.AutoSize = true;
-            this.lblRunTime.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRunTime.Location = new System.Drawing.Point(785, 28);
+            this.lblRunTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRunTime.Location = new System.Drawing.Point(774, 27);
             this.lblRunTime.Name = "lblRunTime";
-            this.lblRunTime.Size = new System.Drawing.Size(90, 23);
+            this.lblRunTime.Size = new System.Drawing.Size(101, 24);
             this.lblRunTime.TabIndex = 6;
             this.lblRunTime.Text = "Run Time";
             // 
@@ -266,33 +265,33 @@
             this.txtDVDReleaseDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDVDReleaseDate.Location = new System.Drawing.Point(500, 25);
             this.txtDVDReleaseDate.Name = "txtDVDReleaseDate";
-            this.txtDVDReleaseDate.Size = new System.Drawing.Size(136, 29);
+            this.txtDVDReleaseDate.Size = new System.Drawing.Size(147, 28);
             this.txtDVDReleaseDate.TabIndex = 5;
             // 
             // lblReleaseDate
             // 
             this.lblReleaseDate.AutoSize = true;
-            this.lblReleaseDate.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReleaseDate.Location = new System.Drawing.Point(381, 28);
+            this.lblReleaseDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReleaseDate.Location = new System.Drawing.Point(360, 27);
             this.lblReleaseDate.Name = "lblReleaseDate";
-            this.lblReleaseDate.Size = new System.Drawing.Size(107, 23);
+            this.lblReleaseDate.Size = new System.Drawing.Size(134, 24);
             this.lblReleaseDate.TabIndex = 4;
             this.lblReleaseDate.Text = "Release Date";
             // 
             // txtDVDLeadActor
             // 
-            this.txtDVDLeadActor.Location = new System.Drawing.Point(118, 25);
+            this.txtDVDLeadActor.Location = new System.Drawing.Point(132, 25);
             this.txtDVDLeadActor.Name = "txtDVDLeadActor";
-            this.txtDVDLeadActor.Size = new System.Drawing.Size(166, 29);
+            this.txtDVDLeadActor.Size = new System.Drawing.Size(211, 28);
             this.txtDVDLeadActor.TabIndex = 3;
             // 
             // lblLeadActor
             // 
             this.lblLeadActor.AutoSize = true;
-            this.lblLeadActor.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeadActor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLeadActor.Location = new System.Drawing.Point(16, 28);
             this.lblLeadActor.Name = "lblLeadActor";
-            this.lblLeadActor.Size = new System.Drawing.Size(96, 23);
+            this.lblLeadActor.Size = new System.Drawing.Size(111, 24);
             this.lblLeadActor.TabIndex = 2;
             this.lblLeadActor.Text = "Lead Actor";
             // 
@@ -312,16 +311,16 @@
             // 
             this.txtBookCISCISArea.Location = new System.Drawing.Point(110, 27);
             this.txtBookCISCISArea.Name = "txtBookCISCISArea";
-            this.txtBookCISCISArea.Size = new System.Drawing.Size(153, 29);
+            this.txtBookCISCISArea.Size = new System.Drawing.Size(153, 28);
             this.txtBookCISCISArea.TabIndex = 1;
             // 
             // lblCISArea
             // 
             this.lblCISArea.AutoSize = true;
-            this.lblCISArea.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCISArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCISArea.Location = new System.Drawing.Point(16, 27);
             this.lblCISArea.Name = "lblCISArea";
-            this.lblCISArea.Size = new System.Drawing.Size(80, 23);
+            this.lblCISArea.Size = new System.Drawing.Size(92, 24);
             this.lblCISArea.TabIndex = 0;
             this.lblCISArea.Text = "CIS Area";
             // 
@@ -336,7 +335,7 @@
             this.grpBook.Controls.Add(this.txtBookISBNLeft);
             this.grpBook.Controls.Add(this.lblISBN);
             this.grpBook.Enabled = false;
-            this.grpBook.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBook.Location = new System.Drawing.Point(18, 65);
             this.grpBook.Name = "grpBook";
             this.grpBook.Size = new System.Drawing.Size(1000, 73);
@@ -348,16 +347,16 @@
             // 
             this.txtBookPages.Location = new System.Drawing.Point(871, 31);
             this.txtBookPages.Name = "txtBookPages";
-            this.txtBookPages.Size = new System.Drawing.Size(67, 29);
+            this.txtBookPages.Size = new System.Drawing.Size(67, 28);
             this.txtBookPages.TabIndex = 15;
             // 
             // lblPages
             // 
             this.lblPages.AutoSize = true;
-            this.lblPages.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPages.Location = new System.Drawing.Point(794, 34);
             this.lblPages.Name = "lblPages";
-            this.lblPages.Size = new System.Drawing.Size(52, 23);
+            this.lblPages.Size = new System.Drawing.Size(68, 24);
             this.lblPages.TabIndex = 14;
             this.lblPages.Text = "Pages";
             // 
@@ -365,16 +364,16 @@
             // 
             this.txtBookAuthor.Location = new System.Drawing.Point(466, 31);
             this.txtBookAuthor.Name = "txtBookAuthor";
-            this.txtBookAuthor.Size = new System.Drawing.Size(160, 29);
+            this.txtBookAuthor.Size = new System.Drawing.Size(181, 28);
             this.txtBookAuthor.TabIndex = 13;
             // 
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAuthor.Location = new System.Drawing.Point(394, 34);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(66, 23);
+            this.lblAuthor.Size = new System.Drawing.Size(72, 24);
             this.lblAuthor.TabIndex = 12;
             this.lblAuthor.Text = "Author";
             // 
@@ -383,41 +382,41 @@
             this.lbldash.AutoSize = true;
             this.lbldash.Location = new System.Drawing.Point(129, 31);
             this.lbldash.Name = "lbldash";
-            this.lbldash.Size = new System.Drawing.Size(14, 23);
+            this.lbldash.Size = new System.Drawing.Size(17, 24);
             this.lbldash.TabIndex = 11;
             this.lbldash.Text = "-";
             // 
             // txtBookISBNRight
             // 
-            this.txtBookISBNRight.Location = new System.Drawing.Point(148, 28);
+            this.txtBookISBNRight.Location = new System.Drawing.Point(152, 28);
             this.txtBookISBNRight.Name = "txtBookISBNRight";
-            this.txtBookISBNRight.Size = new System.Drawing.Size(40, 29);
+            this.txtBookISBNRight.Size = new System.Drawing.Size(42, 28);
             this.txtBookISBNRight.TabIndex = 10;
             // 
             // txtBookISBNLeft
             // 
             this.txtBookISBNLeft.Location = new System.Drawing.Point(83, 28);
             this.txtBookISBNLeft.Name = "txtBookISBNLeft";
-            this.txtBookISBNLeft.Size = new System.Drawing.Size(40, 29);
+            this.txtBookISBNLeft.Size = new System.Drawing.Size(40, 28);
             this.txtBookISBNLeft.TabIndex = 9;
             // 
             // lblISBN
             // 
             this.lblISBN.AutoSize = true;
-            this.lblISBN.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblISBN.Location = new System.Drawing.Point(15, 31);
             this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(53, 23);
+            this.lblISBN.Size = new System.Drawing.Size(56, 24);
             this.lblISBN.TabIndex = 0;
             this.lblISBN.Text = "ISBN";
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(808, 32);
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(803, 32);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(79, 23);
+            this.lblQuantity.Size = new System.Drawing.Size(86, 24);
             this.lblQuantity.TabIndex = 7;
             this.lblQuantity.Text = "Quantity";
             // 
@@ -425,23 +424,23 @@
             // 
             this.txtProductQuantity.Location = new System.Drawing.Point(889, 28);
             this.txtProductQuantity.Name = "txtProductQuantity";
-            this.txtProductQuantity.Size = new System.Drawing.Size(75, 29);
+            this.txtProductQuantity.Size = new System.Drawing.Size(75, 28);
             this.txtProductQuantity.TabIndex = 6;
             // 
             // txtProductTitle
             // 
             this.txtProductTitle.Location = new System.Drawing.Point(566, 28);
             this.txtProductTitle.Name = "txtProductTitle";
-            this.txtProductTitle.Size = new System.Drawing.Size(159, 29);
+            this.txtProductTitle.Size = new System.Drawing.Size(205, 28);
             this.txtProductTitle.TabIndex = 5;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(511, 32);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(46, 23);
+            this.lblTitle.Size = new System.Drawing.Size(50, 24);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Title";
             // 
@@ -449,16 +448,16 @@
             // 
             this.txtProductPrice.Location = new System.Drawing.Point(315, 28);
             this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(115, 29);
+            this.txtProductPrice.Size = new System.Drawing.Size(115, 28);
             this.txtProductPrice.TabIndex = 3;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.Location = new System.Drawing.Point(259, 32);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(50, 23);
+            this.lblPrice.Size = new System.Drawing.Size(58, 24);
             this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "Price";
             // 
@@ -466,16 +465,16 @@
             // 
             this.txtProductUPC.Location = new System.Drawing.Point(89, 28);
             this.txtProductUPC.Name = "txtProductUPC";
-            this.txtProductUPC.Size = new System.Drawing.Size(134, 29);
+            this.txtProductUPC.Size = new System.Drawing.Size(134, 28);
             this.txtProductUPC.TabIndex = 1;
             // 
             // lblUPC
             // 
             this.lblUPC.AutoSize = true;
-            this.lblUPC.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUPC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUPC.Location = new System.Drawing.Point(33, 32);
             this.lblUPC.Name = "lblUPC";
-            this.lblUPC.Size = new System.Drawing.Size(50, 23);
+            this.lblUPC.Size = new System.Drawing.Size(51, 24);
             this.lblUPC.TabIndex = 0;
             this.lblUPC.Text = "UPC";
             // 
@@ -483,11 +482,11 @@
             // 
             this.lblFindSearch.AutoSize = true;
             this.lblFindSearch.BackColor = System.Drawing.Color.Transparent;
-            this.lblFindSearch.Font = new System.Drawing.Font("Goudy Old Style", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFindSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFindSearch.ForeColor = System.Drawing.SystemColors.Desktop;
             this.lblFindSearch.Location = new System.Drawing.Point(58, 166);
             this.lblFindSearch.Name = "lblFindSearch";
-            this.lblFindSearch.Size = new System.Drawing.Size(1150, 28);
+            this.lblFindSearch.Size = new System.Drawing.Size(1311, 29);
             this.lblFindSearch.TabIndex = 6;
             this.lblFindSearch.Text = "To Find/Search, Edit/UPDATE or DELETE, enter Product UPC and Select applropriate " +
     "control at bottom of form.";
@@ -496,10 +495,10 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeader.Font = new System.Drawing.Font("Forte", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.Location = new System.Drawing.Point(266, 9);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(793, 41);
+            this.lblHeader.Size = new System.Drawing.Size(809, 44);
             this.lblHeader.TabIndex = 7;
             this.lblHeader.Text = "Data Entry and Display for Book CD DVD Shop";
             // 
@@ -507,11 +506,11 @@
             // 
             this.lblC.AutoSize = true;
             this.lblC.BackColor = System.Drawing.Color.Transparent;
-            this.lblC.Font = new System.Drawing.Font("Goudy Old Style", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC.ForeColor = System.Drawing.Color.Black;
             this.lblC.Location = new System.Drawing.Point(58, 50);
             this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(1157, 28);
+            this.lblC.Size = new System.Drawing.Size(1355, 29);
             this.lblC.TabIndex = 8;
             this.lblC.Text = "To CREATE a new Book, CIS Book, DVD, Orchestra CD or Chamber CD, always press a b" +
     "utton below before typing.";
@@ -520,14 +519,13 @@
             // 
             this.grpControls.BackColor = System.Drawing.Color.Transparent;
             this.grpControls.BackgroundImage = global::BookCDDVDShop.Properties.Resources.old_background;
-            this.grpControls.Controls.Add(this.btnCreateCDClassical);
             this.grpControls.Controls.Add(this.btnCreateCDChamber);
             this.grpControls.Controls.Add(this.btnCreateCDOrchestra);
             this.grpControls.Controls.Add(this.btnCreateDVD);
             this.grpControls.Controls.Add(this.btnCreateBookCIS);
             this.grpControls.Controls.Add(this.btnCreateBook);
             this.grpControls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpControls.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpControls.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpControls.Location = new System.Drawing.Point(54, 81);
             this.grpControls.Name = "grpControls";
             this.grpControls.Size = new System.Drawing.Size(1013, 82);
@@ -537,7 +535,7 @@
             // 
             // btnCreateCDChamber
             // 
-            this.btnCreateCDChamber.Location = new System.Drawing.Point(856, 16);
+            this.btnCreateCDChamber.Location = new System.Drawing.Point(846, 21);
             this.btnCreateCDChamber.Name = "btnCreateCDChamber";
             this.btnCreateCDChamber.Size = new System.Drawing.Size(149, 55);
             this.btnCreateCDChamber.TabIndex = 4;
@@ -547,7 +545,7 @@
             // 
             // btnCreateCDOrchestra
             // 
-            this.btnCreateCDOrchestra.Location = new System.Drawing.Point(688, 16);
+            this.btnCreateCDOrchestra.Location = new System.Drawing.Point(634, 21);
             this.btnCreateCDOrchestra.Name = "btnCreateCDOrchestra";
             this.btnCreateCDOrchestra.Size = new System.Drawing.Size(149, 55);
             this.btnCreateCDOrchestra.TabIndex = 3;
@@ -557,7 +555,7 @@
             // 
             // btnCreateDVD
             // 
-            this.btnCreateDVD.Location = new System.Drawing.Point(357, 21);
+            this.btnCreateDVD.Location = new System.Drawing.Point(426, 21);
             this.btnCreateDVD.Name = "btnCreateDVD";
             this.btnCreateDVD.Size = new System.Drawing.Size(149, 55);
             this.btnCreateDVD.TabIndex = 2;
@@ -567,8 +565,8 @@
             // 
             // btnCreateBookCIS
             // 
-            this.btnCreateBookCIS.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateBookCIS.Location = new System.Drawing.Point(185, 21);
+            this.btnCreateBookCIS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateBookCIS.Location = new System.Drawing.Point(220, 21);
             this.btnCreateBookCIS.Name = "btnCreateBookCIS";
             this.btnCreateBookCIS.Size = new System.Drawing.Size(149, 55);
             this.btnCreateBookCIS.TabIndex = 1;
@@ -593,7 +591,7 @@
             this.grpfrmControls.Controls.Add(this.btnEditUpdate);
             this.grpfrmControls.Controls.Add(this.lblalert2);
             this.grpfrmControls.Controls.Add(this.lblalert);
-            this.grpfrmControls.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpfrmControls.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpfrmControls.Location = new System.Drawing.Point(54, 706);
             this.grpfrmControls.Name = "grpfrmControls";
             this.grpfrmControls.Size = new System.Drawing.Size(1013, 149);
@@ -640,7 +638,7 @@
             this.lblalert2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblalert2.Location = new System.Drawing.Point(15, 47);
             this.lblalert2.Name = "lblalert2";
-            this.lblalert2.Size = new System.Drawing.Size(399, 23);
+            this.lblalert2.Size = new System.Drawing.Size(471, 24);
             this.lblalert2.TabIndex = 1;
             this.lblalert2.Text = "Press CLEAR FORM when operation is complete.";
             // 
@@ -650,7 +648,7 @@
             this.lblalert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblalert.Location = new System.Drawing.Point(15, 24);
             this.lblalert.Name = "lblalert";
-            this.lblalert.Size = new System.Drawing.Size(712, 23);
+            this.lblalert.Size = new System.Drawing.Size(872, 24);
             this.lblalert.TabIndex = 0;
             this.lblalert.Text = "These operations require entry of an Product UPC (see above) before they can be e" +
     "xecuted.";
@@ -658,7 +656,7 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(1086, 197);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(127, 62);
@@ -669,7 +667,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(1088, 278);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(127, 62);
@@ -680,15 +678,15 @@
             // 
             // txtProductUPCSearch
             // 
-            this.txtProductUPCSearch.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductUPCSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductUPCSearch.Location = new System.Drawing.Point(1079, 87);
             this.txtProductUPCSearch.Name = "txtProductUPCSearch";
-            this.txtProductUPCSearch.Size = new System.Drawing.Size(146, 29);
+            this.txtProductUPCSearch.Size = new System.Drawing.Size(146, 28);
             this.txtProductUPCSearch.TabIndex = 18;
             // 
             // btnProductUPCSearch
             // 
-            this.btnProductUPCSearch.Font = new System.Drawing.Font("Goudy Old Style", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductUPCSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductUPCSearch.Location = new System.Drawing.Point(1088, 122);
             this.btnProductUPCSearch.Name = "btnProductUPCSearch";
             this.btnProductUPCSearch.Size = new System.Drawing.Size(129, 41);
@@ -696,16 +694,6 @@
             this.btnProductUPCSearch.Text = "Search UPC";
             this.btnProductUPCSearch.UseVisualStyleBackColor = true;
             this.btnProductUPCSearch.Click += new System.EventHandler(this.btnProductUPCSearch_Click);
-            // 
-            // btnCreateCDClassical
-            // 
-            this.btnCreateCDClassical.Location = new System.Drawing.Point(519, 16);
-            this.btnCreateCDClassical.Name = "btnCreateCDClassical";
-            this.btnCreateCDClassical.Size = new System.Drawing.Size(149, 55);
-            this.btnCreateCDClassical.TabIndex = 5;
-            this.btnCreateCDClassical.Text = "Create CD Classical";
-            this.btnCreateCDClassical.UseVisualStyleBackColor = true;
-            this.btnCreateCDClassical.Click += new System.EventHandler(this.btnCreateCDClassical_Click);
             // 
             // frmBookCDDVDShop
             // 
@@ -807,9 +795,8 @@
         internal System.Windows.Forms.Button btnExit;
         internal System.Windows.Forms.TextBox txtProductUPC;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TextBox txtProductUPCSearch;
-        private System.Windows.Forms.Button btnProductUPCSearch;
-        internal System.Windows.Forms.Button btnCreateCDClassical;
+        internal System.Windows.Forms.Button btnProductUPCSearch;
+        internal System.Windows.Forms.TextBox txtProductUPCSearch;
     }
 }
 
