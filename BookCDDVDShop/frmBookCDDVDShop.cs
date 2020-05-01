@@ -681,6 +681,7 @@ namespace BookCDDVDShop
                                                      txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text));
 
                             MessageBox.Show("Book successfully updated to database!");
+                            recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
@@ -715,6 +716,7 @@ namespace BookCDDVDShop
                             dbFunctions.UpdateBookCIS(Convert.ToInt32(txtProductUPC.Text), txtBookCISCISArea.Text);
 
                             MessageBox.Show("BookCIS successfully updated to database!");
+                            recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
@@ -744,6 +746,7 @@ namespace BookCDDVDShop
                                                   Convert.ToDateTime(txtDVDReleaseDate.Text), Convert.ToInt32(txtDVDRunTime.Text));
 
                             MessageBox.Show("DVD successfully updated to database!");
+                            recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
@@ -770,6 +773,7 @@ namespace BookCDDVDShop
                             dbFunctions.UpdateCDOrchestra(Convert.ToInt32(txtProductUPC.Text), txtCDOrchestraConductor.Text);
 
                             MessageBox.Show("CDOrchestra successfully updated to database!");
+                            recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
@@ -795,6 +799,7 @@ namespace BookCDDVDShop
                             dbFunctions.UpdateCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
 
                             MessageBox.Show("CDChamber successfully updated to database!");
+                            recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
