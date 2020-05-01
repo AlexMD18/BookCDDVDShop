@@ -613,6 +613,7 @@ namespace BookCDDVDShop
 
                             MessageBox.Show("Chamber CD successfully inserted into database!");
                             recordsProcessedCount++;
+
                             FormController.clear(this);
                         }
                         else
