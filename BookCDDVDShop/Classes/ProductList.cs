@@ -10,21 +10,26 @@ namespace BookCDDVDShop.Classes
     [Serializable()]
     public class ProductList
     {
-        private ArrayList productList;
+        private List<Product> hiddenProductList = new List<Product>();
 
         public ProductList()
         {
-            this.productList = new ArrayList();
+            hiddenProductList = new List<Product>();
         }
 
         public Product getAnItem(int i)
         {
-            return null;
+            return hiddenProductList[i];
+        }
+
+        public void Add(Product p)
+        {
+            hiddenProductList.Add(p);
         }
 
         public int Count()
         {
-            return this.productList.Count;
+            return hiddenProductList.Count;
         }
 
     }

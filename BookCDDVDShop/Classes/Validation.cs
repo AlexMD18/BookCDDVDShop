@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace BookCDDVDShop.Classes
 {
-    class Validation
+    public static class Validation
     {
         //This method will validate the product UPC to make sure it is a length of 5 and can contain a mix of alphanumeric characters. 
         public static bool validateProductUPC(string productUPC)

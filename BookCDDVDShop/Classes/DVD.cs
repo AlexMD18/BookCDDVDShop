@@ -18,6 +18,7 @@ namespace BookCDDVDShop.Classes
         {
             hiddenLeadActor = "";
             hiddenRuntime = 0;
+            hiddenReleaseDate = new DateTime(01, 01, 1997);
         }
 
         public DVD(int UPC, decimal price, string title, int quantity, string leadActor, DateTime releaseDate, int runtime)
@@ -68,7 +69,7 @@ namespace BookCDDVDShop.Classes
         {
             base.Save(f);
             hiddenLeadActor = f.txtDVDLeadActor.Text;
-            hiddenReleaseDate = Convert.ToDateTime(f.txtDVDReleaseDate.Text);
+            hiddenReleaseDate = DateTime.Parse(f.txtDVDReleaseDate.Text);
             hiddenRuntime = Convert.ToInt32(f.txtDVDRunTime.Text);
         }
 
@@ -77,7 +78,7 @@ namespace BookCDDVDShop.Classes
         {
             base.Display(f);
             f.txtDVDLeadActor.Text = hiddenLeadActor.ToString();
-            f.txtDVDReleaseDate.Text = hiddenReleaseDate.ToString();
+            f.txtDVDReleaseDate.Text = hiddenReleaseDate.ToShortDateString();
             f.txtDVDRunTime.Text = hiddenRuntime.ToString();
         }  // end Display
 
