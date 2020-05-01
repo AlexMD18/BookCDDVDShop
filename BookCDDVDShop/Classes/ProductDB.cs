@@ -32,7 +32,6 @@ namespace BookCDDVDShop.Classes
             /*
             string strInsertBook = "INSERT INTO Book (fldUPC, fldISBN, fldauthor, fldpages) " +
                 "VALUES(" + UPC + ", '" + ISBN + "', '" + author + "', " + pages + " );";
-
             */
             // Convert.ToDateTime(ProductBirthDate)
             OleDbConnection myConnection = new OleDbConnection(strConnection);
@@ -805,13 +804,13 @@ namespace BookCDDVDShop.Classes
         // 4 Updates record from DVD table that match integer parameter ProductUPC
         public bool UpdateDVD(int UPC, string leadActor, DateTime releaseDate, int runTime)
         {
-            string strUpdateFaculty = "UPDATE DVD SET " +
+            string strUpdateDVD = "UPDATE DVD SET " +
                                     "fldUPC = " + UPC + " fldLeadActor = '" + leadActor + "' fldReleaseDate = " +
                                     releaseDate + "fldRunTime = " + runTime +
                                     " WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
-            OleDbCommand myCommand = new OleDbCommand(strUpdateFaculty, myConnection);
+            OleDbCommand myCommand = new OleDbCommand(strUpdateDVD, myConnection);
 
             try
             {

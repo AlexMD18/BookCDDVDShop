@@ -262,7 +262,7 @@ namespace BookCDDVDShop.Classes
         {
             f.grpCDOrchestra.Enabled = false;
         }  // end deativateCDClOrch
-    
+
 
         // Disables textboxes groupbox
         public static void deactivateBookCIS(frmBookCDDVDShop f)
