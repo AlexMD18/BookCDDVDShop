@@ -78,7 +78,7 @@ namespace BookCDDVDShop.Classes
         {
             base.Display(f);
             f.txtDVDLeadActor.Text = hiddenLeadActor.ToString();
-            f.txtDVDReleaseDate.Text = hiddenReleaseDate.ToShortDateString();
+            f.txtDVDReleaseDate.Text = hiddenReleaseDate.ToString("MM/dd/yyyy");
             f.txtDVDRunTime.Text = hiddenRuntime.ToString();
         }  // end Display
 

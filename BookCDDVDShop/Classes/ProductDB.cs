@@ -805,8 +805,8 @@ namespace BookCDDVDShop.Classes
         public bool UpdateDVD(int UPC, string leadActor, DateTime releaseDate, int runTime)
         {
             string strUpdateDVD = "UPDATE DVD SET " +
-                                    "fldUPC = " + UPC + " fldLeadActor = '" + leadActor + "' fldReleaseDate = " +
-                                    releaseDate + "fldRunTime = " + runTime +
+                                    "fldUPC = " + UPC + ", fldLeadActor = '" + leadActor + "', fldReleaseDate = " +
+                                    releaseDate.ToShortDateString() + ", fldRunTime = " + runTime +
                                     " WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);

@@ -175,6 +175,9 @@ namespace BookCDDVDShop
 
         private void btnCreateDVD_Click(object sender, EventArgs e)
         {
+            txtDVDLeadActor.ReadOnly = false;
+            txtDVDReleaseDate.ReadOnly = false;
+            txtDVDRunTime.ReadOnly = false;
             FormController.activateDVD(this);
             btnCreateBook.Enabled = false;
             btnCreateBookCIS.Enabled = false;
@@ -294,6 +297,9 @@ namespace BookCDDVDShop
                     FormController.activateDVD(this);
                     FormController.deactivateAllButDVD(this);
 
+                    txtDVDLeadActor.ReadOnly = false;
+                    txtDVDReleaseDate.ReadOnly = false;
+                    txtDVDRunTime.ReadOnly = false;
                     txtDVDLeadActor.Text = ((DVD)p).DVDLeadActor;
                     txtDVDReleaseDate.Text = ((DateTime)((DVD)p).DVDReleaseDate).ToString("MM/dd/yyyy");
                     txtDVDRunTime.Text = (((DVD)p).DVDRunTime).ToString();
@@ -373,6 +379,7 @@ namespace BookCDDVDShop
                 } // Creates a new product to display in form.
                 else
                 {
+                    
                     btnDelete.Enabled = true;
                     string[] attributes = pstring.Split('\n'); // splits product attributes into array
 
@@ -385,6 +392,9 @@ namespace BookCDDVDShop
 
                     if (ptype == "DVD")
                     {
+                        txtDVDLeadActor.ReadOnly = true;
+                        txtDVDReleaseDate.ReadOnly = true;
+                        txtDVDRunTime.ReadOnly = true;
                         prod = new DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
                             attributes[5], DateTime.Parse(attributes[6]), Convert.ToInt32(attributes[7]));
                         prod.Display(this);
@@ -597,7 +607,7 @@ namespace BookCDDVDShop
                             MessageBox.Show("There was a problem inserting the DVD into the file. Check the entered information and try again!");
                         }
                     }
-
+                    //works
                     else if (clickedBtn == "create_CD_chamber")
                     {
                         bool chamberValidated;
@@ -624,6 +634,7 @@ namespace BookCDDVDShop
                             MessageBox.Show("There was a problem inserting the chamber CD into the file. Check the entered information and try again!");
                         }
                     }
+                    //works
                     else if (clickedBtn == "create_CD_orchestra")
                     {
                         bool orchestraValidated;
@@ -651,7 +662,7 @@ namespace BookCDDVDShop
                         }
                     }
                 }
-                //this is for updating
+                //his is for updating
 
                 else
                 {
@@ -664,6 +675,7 @@ namespace BookCDDVDShop
 
                     string ptype = attributes[4]; // gets the product type from this attribute and then creates new product to display in form
 
+                    //Works
                     if (ptype == "Book")
                     {
                         bool bookValidated;
@@ -694,13 +706,14 @@ namespace BookCDDVDShop
                         }
                     }
 
+                    //Works
                     if (ptype == "BookCIS")
                     {
                         bool bookCISValidated;
 
                         bookCISValidated = Validation.validateBookISBN(txtBookISBNLeft.Text) &&
                                            Validation.validateBookISBN(txtBookISBNRight.Text) &&
-                                           Validation.validatePersonName(txtBookAuthor.Text) &&
+                                           Validation.validateAnything(txtBookAuthor.Text) &&
                                            Validation.validatePositiveInteger(txtBookPages.Text) &&
                                            Validation.validateAnything(txtBookCISCISArea.Text);
 

@@ -34,7 +34,7 @@ namespace BookCDDVDShop.Classes
         public static bool validateAnything(string productTitle)
         {
             //Allows title to be anything of any length
-            Regex rx = new Regex("^(?s).*$");
+            Regex rx = new Regex("[\\s\\S]");
             return rx.IsMatch(productTitle);
         }
 
