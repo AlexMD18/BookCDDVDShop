@@ -52,7 +52,8 @@ namespace BookCDDVDShop.Classes
 
         public static bool validatePersonName(string author)
         {
-            Regex rx = new Regex("^[a-zA-Z]+((\\s[a-zA-Z ])?[',.\\s-]?[a-zA-Z]*)$");
+            //Regex rx = new Regex("^[a-zA-Z]+((\\s[a-zA-Z ])?[',.\\s-]?[a-zA-Z]*)$");
+            Regex rx = new Regex("^(?s).*$");
             return rx.IsMatch(author);
         }
 
