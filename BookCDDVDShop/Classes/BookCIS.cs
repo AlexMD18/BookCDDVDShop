@@ -2,7 +2,9 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: BookCIS - This class handles the creation and all the attribues of CIS books. It is derived from the book class and the product class. 
+ It saves data typed into the form and displays it back to the form when called. It also contains a ToString method for visibility of what is happenging behind
+ the scenes when updating, inserting, ect...
  */
 
 using System;
@@ -14,21 +16,27 @@ using System.Threading.Tasks;
 namespace BookCDDVDShop.Classes
 {
     [Serializable()]
+
+    //Derived From Book Class
     class BookCIS : Book
     {
+        //Private Objects
         private string hiddenCISArea;
 
+        //Parameterless Construcor
         public BookCIS()
         {
             this.hiddenCISArea = "";
         }
 
+        //Parameterized Constructor
         public BookCIS(int UPC, decimal price, string title, int quantity, int ISBNLeft, int ISBNRight, string author, int pages, string CISArea)
             : base(UPC, price, title, quantity, ISBNLeft, ISBNRight, author, pages)
         {
             hiddenCISArea = CISArea;
         }
 
+        //Beginning of Getters and Setters
         public string BookCISCISArea
         {
             get
@@ -40,18 +48,7 @@ namespace BookCDDVDShop.Classes
                 hiddenCISArea = value;
             }
         }
-
-        public string BookCISArea
-        {
-            get
-            {
-                return hiddenCISArea;
-            }  // end get
-            set   // (string value)
-            {
-                hiddenCISArea = value;
-            }  // end get
-        }  // end Property
+        //End of Getters and Setters
 
         // Save data from form to object
         public override void Save(frmBookCDDVDShop f)

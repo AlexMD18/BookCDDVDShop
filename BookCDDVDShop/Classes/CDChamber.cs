@@ -2,7 +2,9 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: CDChamber - This class handles the creation and all the attribues of Chamber CD's. It is derived from the CD Classical Class and product class. 
+ It saves data typed into the form and displays it back to the form when called. It also contains a ToString method for visibility of what is happenging behind
+ the scenes when updating, inserting, ect...
  */
 
 using System;
@@ -17,8 +19,11 @@ namespace BookCDDVDShop.Classes
 {
     // CDClChamber inherits the data and methods in CDClassical and can be a serialized to a binary file
     [Serializable()]
+
+    //Derived From CDClassical Class
     class CDChamber : CDClassical
     {
+        //Private Objects
         private string hiddenInstrumentList;
 
         // Parameterless Constructor

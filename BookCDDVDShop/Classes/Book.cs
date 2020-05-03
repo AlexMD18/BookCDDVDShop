@@ -2,7 +2,9 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: Book Class - This class handles the creation and all the attribues of books. It is derived from the product class. It saves
+ data typed into the form and displays it back to the form when called. It also contains a ToString method for visibility of what is happenging behind
+ the scenes when updating, inserting, ect...
  */
 
 using System;
@@ -16,6 +18,7 @@ namespace BookCDDVDShop.Classes
     [Serializable()]
     class Book : Product
     {
+        //Private Objects
         private int hiddenISBNLeft;
         private int hiddenISBNRight;
         private string hiddenAuthor;
@@ -30,6 +33,7 @@ namespace BookCDDVDShop.Classes
             this.hiddenPages = 0;
         }
 
+        //Parameterized Constructor
         public Book(int UPC, decimal price, string title, int quantity, int ISBNLeft, int ISBNRight, string author, int pages)
             : base (UPC, price, title, quantity)
         {
@@ -39,6 +43,7 @@ namespace BookCDDVDShop.Classes
             hiddenPages = pages;
         }
 
+        //Beginning of Getters and Setters
         public int BookISBNLeft
         {
             get
@@ -86,7 +91,9 @@ namespace BookCDDVDShop.Classes
                 hiddenPages = value;
             }
         }
+        //End of Getters and Setters
 
+        //Saves the contents of the form's textboxes into the hidden attributes
         public override void Save(frmBookCDDVDShop f)
         {
             base.Save(f);
@@ -106,7 +113,7 @@ namespace BookCDDVDShop.Classes
             f.txtBookPages.Text = hiddenPages.ToString();
         }  // end Display
 
-
+        //ToString method used in order to be able to see information about the book as it is passed in.
         public override string ToString()
         {
             string s = base.ToString() + "\n";

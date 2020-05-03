@@ -2,7 +2,9 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: CDClassical - This class handles the creation and all the attribues of Classical CD's. It is derived from the product class. 
+ It saves data typed into the form and displays it back to the form when called. It also contains a ToString method for visibility of what is happenging behind
+ the scenes when updating, inserting, ect...
  */
 
 using System;
@@ -18,8 +20,11 @@ namespace BookCDDVDShop.Classes
 {
     // CDClassical inherits the data and methods in Product
     [Serializable()]
+
+    //Derived From Product Class
     public abstract class CDClassical : Product
     {
+        //Private Objects
         private string hiddenLabel;
         private string hiddenArtists;
 

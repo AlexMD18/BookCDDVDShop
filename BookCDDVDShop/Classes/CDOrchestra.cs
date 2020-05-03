@@ -2,7 +2,9 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: CDOrchestra - This class handles the creation and all the attribues of Chamber CD's. It is derived from the CDClassical class and the product class. 
+ It saves data typed into the form and displays it back to the form when called. It also contains a ToString method for visibility of what is happenging behind
+ the scenes when updating, inserting, ect...
  */
 
 using System;
@@ -14,8 +16,11 @@ using System.Threading.Tasks;
 namespace BookCDDVDShop.Classes
 {
     [Serializable()]
+
+    //Derived From CDClassical Class
     class CDOrchestra : CDClassical
     {
+        //Private Objects
         private string hiddenConductor;
 
         // Parameterless Constructor
