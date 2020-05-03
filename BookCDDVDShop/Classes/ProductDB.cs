@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ Alex Drogo / Sean Fuller
+ Due Date: 05/04/2020
+ CIS 3309_001
+ Class Description: 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -323,8 +330,8 @@ namespace BookCDDVDShop.Classes
                 dbStringProduct = dbStringProduct + myDataReader["fldQuantity"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + dbProductType + Environment.NewLine;
 
-                MessageBox.Show("Product Found ..." + Environment.NewLine
-                    + dbStringProduct, "Show Found Product", MessageBoxButtons.OK);
+                /*MessageBox.Show("Product Found ..." + Environment.NewLine
+                    + dbStringProduct, "Show Found Product", MessageBoxButtons.OK);*/
 
                 //dbProductType = myDataReader["fldProductType"].ToString();
 
@@ -422,8 +429,8 @@ namespace BookCDDVDShop.Classes
             }
 
             fieldsFound = dbStringProduct + dbStringBook;
-            MessageBox.Show("Book Found ..." + Environment.NewLine
-                + fieldsFound, "Show Found Product", MessageBoxButtons.OK);
+            /*MessageBox.Show("Book Found ..." + Environment.NewLine
+                + fieldsFound, "Show Found Product", MessageBoxButtons.OK);*/
             return myDataReader;
         }  // end SelectProductFromBook
 
@@ -476,8 +483,8 @@ namespace BookCDDVDShop.Classes
             }
 
             fieldsFound = dbStringProduct + dbStringCDClassical;
-            MessageBox.Show("CDClassical Found ..." + Environment.NewLine
-                + fieldsFound, "Show Found CDCLassical", MessageBoxButtons.OK);
+            /*MessageBox.Show("CDClassical Found ..." + Environment.NewLine
+                + fieldsFound, "Show Found CDCLassical", MessageBoxButtons.OK);*/
             return myDataReader;
         }  // end SelectProductFromCDClassical
 
@@ -534,8 +541,8 @@ namespace BookCDDVDShop.Classes
             }
 
             fieldsFound = dbStringProduct + dbStringCDClassical + dbStringCDChamber;
-            MessageBox.Show("CDChamber Found ..." + Environment.NewLine
-                + fieldsFound, "Show Found CDChamber", MessageBoxButtons.OK);
+            /*MessageBox.Show("CDChamber Found ..." + Environment.NewLine
+                + fieldsFound, "Show Found CDChamber", MessageBoxButtons.OK);*/
 
             return myDataReader;
         } // end SelectProductFromCDChamber
@@ -593,8 +600,8 @@ namespace BookCDDVDShop.Classes
             }
 
             fieldsFound = dbStringProduct + dbStringCDClassical + dbStringCDOrchestra;
-            MessageBox.Show("CDOrchestra Found ..." + Environment.NewLine
-                + fieldsFound, "Show Found CDOrchestra", MessageBoxButtons.OK);
+            /*MessageBox.Show("CDOrchestra Found ..." + Environment.NewLine
+                + fieldsFound, "Show Found CDOrchestra", MessageBoxButtons.OK);*/
             return myDataReader;
         } // end SelectProductFromCDOrchestra
 
@@ -648,8 +655,8 @@ namespace BookCDDVDShop.Classes
             }
 
             fieldsFound = dbStringProduct + dbStringDVD;
-            MessageBox.Show("DVD Found ..." + Environment.NewLine
-                + dbStringProduct, "Show Found DVD", MessageBoxButtons.OK);
+            /*MessageBox.Show("DVD Found ..." + Environment.NewLine
+                + dbStringProduct, "Show Found DVD", MessageBoxButtons.OK);*/
             return myDataReader;
         } // end SelectProductFromDVD
 
@@ -707,8 +714,8 @@ namespace BookCDDVDShop.Classes
             }
 
             fieldsFound = dbStringProduct + dbStringBook + dbStringBookCIS;
-            MessageBox.Show("BookCIS Found ..." + Environment.NewLine
-                + dbStringProduct, "Show Found BookCIS", MessageBoxButtons.OK);
+            /*MessageBox.Show("BookCIS Found ..." + Environment.NewLine
+                + dbStringProduct, "Show Found BookCIS", MessageBoxButtons.OK);*/
             return myDataReader;
         } // end SelectProductFromCBookCIS
 
@@ -805,8 +812,8 @@ namespace BookCDDVDShop.Classes
         public bool UpdateDVD(int UPC, string leadActor, DateTime releaseDate, int runTime)
         {
             string strUpdateDVD = "UPDATE DVD SET " +
-                                    "fldUPC = " + UPC + ", fldLeadActor = '" + leadActor + "', fldReleaseDate = " +
-                                    releaseDate.ToShortDateString() + ", fldRunTime = " + runTime +
+                                    "fldUPC = " + UPC + ", fldLeadActor = '" + leadActor + "', fldReleaseDate = '" +
+                                    releaseDate.ToShortDateString() + "', fldRunTime = " + runTime +
                                     " WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
@@ -832,8 +839,8 @@ namespace BookCDDVDShop.Classes
         public bool UpdateCDClassical(int UPC, string label, string artist)
         {
             // string strUpdateCDClassical = "SELECT * FROM CDClassical WHERE CDClassical.CDClassicalID = " + ProductUPC; // string select statement
-            string strUpdateCDClassical = "UPDATE CDClassical SET fldLabel = '" + label + "' , fldArtist = '" + artist + "'" +
-                                       " WHERE fldUPC = " + UPC;
+            string strUpdateCDClassical = "UPDATE CDClassical SET fldLabel = '" + label + "' , fldArtists = '" + artist +
+                                       "' WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
             OleDbCommand myCommand = new OleDbCommand(strUpdateCDClassical, myConnection);
@@ -872,7 +879,7 @@ namespace BookCDDVDShop.Classes
             }
             catch (OleDbException ex)
             {
-                MessageBox.Show("There was an Update CDCHamber error: " + ex.Message,
+                MessageBox.Show("There was an Update CDChamber error: " + ex.Message,
                     "Update CDChamber Failed", MessageBoxButtons.OK);
                 myConnection.Close();
                 return false; // returns false if Update was unsuccessful

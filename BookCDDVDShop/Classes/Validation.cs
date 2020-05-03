@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ Alex Drogo / Sean Fuller
+ Due Date: 05/04/2020
+ CIS 3309_001
+ Class Description: 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,7 +59,7 @@ namespace BookCDDVDShop.Classes
 
         public static bool validatePersonName(string author)
         {
-            Regex rx = new Regex("^[a-zA-Z]+((\\s[a-zA-Z ])?[',.\\s-]?[a-zA-Z]*)$");
+            Regex rx = new Regex("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z][',. -]*)*$");
             //Regex rx = new Regex("^(?s).*$");
             return rx.IsMatch(author);
         }

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ Alex Drogo / Sean Fuller
+ Due Date: 05/04/2020
+ CIS 3309_001
+ Class Description: 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -141,6 +148,10 @@ namespace BookCDDVDShop
 
         private void btnCreateBook_Click(object sender, EventArgs e)
         {
+            txtBookISBNLeft.ReadOnly = false;
+            txtBookISBNRight.ReadOnly = false;
+            txtBookAuthor.ReadOnly = false;
+            txtBookPages.ReadOnly = false;
             FormController.activateBook(this);
             FormController.activateProduct(this);
             btnCreateBookCIS.Enabled = true;
@@ -151,23 +162,13 @@ namespace BookCDDVDShop
             clickedBtn = "create_book";
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Number of records processed = " +
-                recordsProcessedCount.ToString(),
-                "Exit Message", MessageBoxButtons.OK);
-            MessageBox.Show("The list entries are ...", "Display List Entries");
-            //thisProductList.displayProductList();
-
-            // Save serialized binary file
-            //SerializationFile.writeToFile(thisProductList, FileName);
-
-            this.Close();
-
-        }
-
         private void btnCreateBookCIS_Click(object sender, EventArgs e)
         {
+            txtBookISBNLeft.ReadOnly = false;
+            txtBookISBNRight.ReadOnly = false;
+            txtBookAuthor.ReadOnly = false;
+            txtBookPages.ReadOnly = false;
+            txtBookCISCISArea.ReadOnly = false;
             FormController.activateBookCIS(this);
             clickedBtn = "create_book_CIS";
             btnSave.Enabled = true;
@@ -189,6 +190,9 @@ namespace BookCDDVDShop
 
         private void btnCreateCDOrchestra_Click(object sender, EventArgs e)
         {
+            txtCDClassicalArtists.ReadOnly = false;
+            txtCDClassicalLabel.ReadOnly = false;
+            txtCDOrchestraConductor.ReadOnly = false;
             FormController.activateCDClassical(this);
             FormController.activateCDOrchestra(this);
             btnCreateBook.Enabled = false;
@@ -201,6 +205,9 @@ namespace BookCDDVDShop
 
         private void btnCreateCDChamber_Click(object sender, EventArgs e)
         {
+            txtCDClassicalArtists.ReadOnly = false;
+            txtCDClassicalLabel.ReadOnly = false;
+            txtCDChamberInstrumentList.ReadOnly = false;
             FormController.activateCDClassical(this);
             FormController.activateCDChamber(this);
             btnCreateBook.Enabled = false;
@@ -228,6 +235,15 @@ namespace BookCDDVDShop
 
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Number of records processed = " +
+                recordsProcessedCount.ToString(),
+                "Exit Message", MessageBoxButtons.OK);
+
+            this.Close();
+        }
+
         private void btnEditUpdate_Click(object sender, EventArgs e)
         {
             bool success;
@@ -239,6 +255,10 @@ namespace BookCDDVDShop
                 btnSave.Enabled = true;
                 btnEditUpdate.Enabled = false;
 
+                txtProductUPC.ReadOnly = false;
+                txtProductTitle.ReadOnly = false;
+                txtProductQuantity.ReadOnly = false;
+                txtProductPrice.ReadOnly = false;
                 Product p = thisProductList.getAnItem(currentIndex);
                 txtProductPrice.Text = p.ProductPrice.ToString();
                 txtProductUPC.Text = p.ProductUPC.ToString();
@@ -252,6 +272,9 @@ namespace BookCDDVDShop
                     FormController.deactivateAllButCDChamber(this);
                     FormController.deactivateAddButtons(this);
 
+                    txtCDClassicalArtists.ReadOnly = false;
+                    txtCDClassicalLabel.ReadOnly = false;
+                    txtCDChamberInstrumentList.ReadOnly = false;
                     txtCDClassicalLabel.Text = ((CDClassical)p).CDClassicalLabel;
                     txtCDClassicalArtists.Text = ((CDClassical)p).CDClassicalArtists;
                     txtCDChamberInstrumentList.Text = ((CDChamber)p).getCDChamberInstrumentList();
@@ -262,6 +285,9 @@ namespace BookCDDVDShop
                     FormController.activateCDOrchestra(this);
                     FormController.deactivateAllButCDOrchestra(this);
 
+                    txtCDClassicalArtists.ReadOnly = false;
+                    txtCDClassicalLabel.ReadOnly = false;
+                    txtCDOrchestraConductor.ReadOnly = false;
                     txtCDClassicalLabel.Text = ((CDClassical)p).CDClassicalLabel;
                     txtCDClassicalArtists.Text = ((CDClassical)p).CDClassicalArtists;
                     txtCDOrchestraConductor.Text = ((CDOrchestra)p).getCDOrchestraConductor();
@@ -273,6 +299,10 @@ namespace BookCDDVDShop
                     FormController.deactivateAllButBook(this);
                     FormController.deactivateAddButtons(this);
 
+                    txtBookISBNLeft.ReadOnly = false;
+                    txtBookISBNRight.ReadOnly = false;
+                    txtBookAuthor.ReadOnly = false;
+                    txtBookPages.ReadOnly = false;
                     txtBookISBNLeft.Text = (((Book)p).BookISBNLeft).ToString();
                     txtBookISBNRight.Text = (((Book)p).BookISBNRight).ToString();
                     txtBookAuthor.Text = ((Book)p).BookAuthor;
@@ -284,6 +314,11 @@ namespace BookCDDVDShop
                     FormController.activateBookCIS(this);
                     FormController.deactivateAllButBookCIS(this);
 
+                    txtBookISBNLeft.ReadOnly = false;
+                    txtBookISBNRight.ReadOnly = false;
+                    txtBookAuthor.ReadOnly = false;
+                    txtBookPages.ReadOnly = false;
+                    txtBookCISCISArea.ReadOnly = false;
                     txtBookISBNLeft.Text = (((Book)p).BookISBNLeft).ToString();
                     txtBookISBNRight.Text = (((Book)p).BookISBNRight).ToString();
                     txtBookAuthor.Text = ((Book)p).BookAuthor;
@@ -379,7 +414,11 @@ namespace BookCDDVDShop
                 } // Creates a new product to display in form.
                 else
                 {
-                    
+                    txtProductUPC.ReadOnly = true;
+                    txtProductTitle.ReadOnly = true;
+                    txtProductQuantity.ReadOnly = true;
+                    txtProductPrice.ReadOnly = true;
+
                     btnDelete.Enabled = true;
                     string[] attributes = pstring.Split('\n'); // splits product attributes into array
 
@@ -409,6 +448,10 @@ namespace BookCDDVDShop
                         String isbnS = attributes[5];
                         String isbn1 = isbnS.Substring(0, 3);
                         String isbn2 = isbnS.Substring(3, 3);
+                        txtBookISBNLeft.ReadOnly = true;
+                        txtBookISBNRight.ReadOnly = true;
+                        txtBookAuthor.ReadOnly = true;
+                        txtBookPages.ReadOnly = true;
                         prod = new Book(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
                             Convert.ToInt32(isbn1), Convert.ToInt32(isbn2), attributes[6], Convert.ToInt32(attributes[7]));
                         prod.Display(this);
@@ -423,20 +466,11 @@ namespace BookCDDVDShop
                         String isbnS = attributes[5];
                         String isbn1 = isbnS.Substring(0, 3);
                         String isbn2 = isbnS.Substring(3, 3);
-                        prod = new BookCIS(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                            Convert.ToInt32(isbn1), Convert.ToInt32(isbn2), attributes[6], Convert.ToInt32(attributes[7]), attributes[8]);
-                        prod.Display(this);
-                        FormController.searchForm(this);
-                        FormController.activateBookCIS(this);
-                        thisProductList.Add(prod);
-                        currentIndex++;
-                    }
-
-                    if (ptype == "BookCIS")
-                    {
-                        String isbnS = attributes[5];
-                        String isbn1 = isbnS.Substring(0, 3);
-                        String isbn2 = isbnS.Substring(3, 3);
+                        txtBookISBNLeft.ReadOnly = true;
+                        txtBookISBNRight.ReadOnly = true;
+                        txtBookAuthor.ReadOnly = true;
+                        txtBookPages.ReadOnly = true;
+                        txtBookCISCISArea.ReadOnly = true;
                         prod = new BookCIS(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
                             Convert.ToInt32(isbn1), Convert.ToInt32(isbn2), attributes[6], Convert.ToInt32(attributes[7]), attributes[8]);
                         prod.Display(this);
@@ -448,6 +482,9 @@ namespace BookCDDVDShop
 
                     if (ptype == "CDOrchestra")
                     {
+                        txtCDClassicalArtists.ReadOnly = true;
+                        txtCDClassicalLabel.ReadOnly = true;
+                        txtCDOrchestraConductor.ReadOnly = true;
                         prod = new CDOrchestra(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
                             attributes[5], attributes[6], attributes[7]);
                         prod.Display(this);
@@ -459,6 +496,9 @@ namespace BookCDDVDShop
 
                     if (ptype == "CDChamber")
                     {
+                        txtCDClassicalArtists.ReadOnly = true;
+                        txtCDClassicalLabel.ReadOnly = true;
+                        txtCDChamberInstrumentList.ReadOnly = true;
                         //String[] InstrumentList = attributes[6].Split(' ');
                         prod = new CDChamber(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
                             attributes[5], attributes[6], attributes[7]);
@@ -483,6 +523,7 @@ namespace BookCDDVDShop
             else
             {
                 // UPC is invalid
+                MessageBox.Show("Invalid URL", "Error:");
             }
         }
 
@@ -531,13 +572,13 @@ namespace BookCDDVDShop
                             dbFunctions.InsertBook(Convert.ToInt32(txtProductUPC.Text), Convert.ToInt32(txtBookISBNLeft.Text + txtBookISBNRight.Text),
                                                      txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text));
 
-                            MessageBox.Show("Book successfully inserted into database!");
+                            MessageBox.Show("Book successfully inserted into database!", "Success");
                             recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!", "Error");
                         }
 
                     }
@@ -567,13 +608,13 @@ namespace BookCDDVDShop
 
                             dbFunctions.InsertBookCIS(Convert.ToInt32(txtProductUPC.Text), txtBookCISCISArea.Text);
 
-                            MessageBox.Show("Book successfully inserted into database!");
+                            MessageBox.Show("Book successfully inserted into database!", "Success");
                             recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!", "Error");
                         }
                     }
                     //works
@@ -598,13 +639,13 @@ namespace BookCDDVDShop
                             dbFunctions.InsertDVD(Convert.ToInt32(txtProductUPC.Text), txtDVDLeadActor.Text,
                                                   Convert.ToDateTime(txtDVDReleaseDate.Text), Convert.ToInt32(txtDVDRunTime.Text));
 
-                            MessageBox.Show("DVD successfully inserted into database!");
+                            MessageBox.Show("DVD successfully inserted into database!", "Success");
                             recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the DVD into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the DVD into the file. Check the entered information and try again!", "Error");
                         }
                     }
                     //works
@@ -624,14 +665,13 @@ namespace BookCDDVDShop
 
                             dbFunctions.InsertCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
 
-                            MessageBox.Show("Chamber CD successfully inserted into database!");
+                            MessageBox.Show("Chamber CD successfully inserted into database!", "Success");
                             recordsProcessedCount++;
-                            MessageBox.Show("CDChamber successfully inserted into database!");
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the chamber CD into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the chamber CD into the file. Check the entered information and try again!", "Error");
                         }
                     }
                     //works
@@ -652,13 +692,13 @@ namespace BookCDDVDShop
 
                             dbFunctions.InsertCDOrchestra(Convert.ToInt32(txtProductUPC.Text), txtCDOrchestraConductor.Text);
 
-                            MessageBox.Show("Orchestra CD successfully inserted into database!");
+                            MessageBox.Show("Orchestra CD successfully inserted into database!", "Success");
                             recordsProcessedCount++;
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the orchestra CD into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the orchestra CD into the file. Check the entered information and try again!", "Error");
                         }
                     }
                 }
@@ -697,12 +737,12 @@ namespace BookCDDVDShop
                             dbFunctions.UpdateBook(Convert.ToInt32(txtProductUPC.Text), Convert.ToInt32(txtBookISBNLeft.Text + txtBookISBNRight.Text),
                                                      txtBookAuthor.Text, Convert.ToInt32(txtBookPages.Text));
 
-                            MessageBox.Show("Book successfully updated to database!");
+                            MessageBox.Show("Book successfully updated to database!", "Success");
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!", "Error");
                         }
                     }
 
@@ -732,12 +772,12 @@ namespace BookCDDVDShop
 
                             dbFunctions.UpdateBookCIS(Convert.ToInt32(txtProductUPC.Text), txtBookCISCISArea.Text);
 
-                            MessageBox.Show("BookCIS successfully updated to database!");
+                            MessageBox.Show("BookCIS successfully updated to database!", "Success");
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the book into the file. Check the entered information and try again!", "Error");
                         }
                     }
                     if (ptype == "DVD")
@@ -761,12 +801,12 @@ namespace BookCDDVDShop
                             dbFunctions.UpdateDVD(Convert.ToInt32(txtProductUPC.Text), txtDVDLeadActor.Text,
                                                   Convert.ToDateTime(txtDVDReleaseDate.Text), Convert.ToInt32(txtDVDRunTime.Text));
 
-                            MessageBox.Show("DVD successfully updated to database!");
+                            MessageBox.Show("DVD successfully updated to database!", "Success");
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the DVD into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the DVD into the file. Check the entered information and try again!", "Error");
                         }
                     }
 
@@ -787,12 +827,12 @@ namespace BookCDDVDShop
 
                             dbFunctions.UpdateCDOrchestra(Convert.ToInt32(txtProductUPC.Text), txtCDOrchestraConductor.Text);
 
-                            MessageBox.Show("CDOrchestra successfully updated to database!");
+                            MessageBox.Show("CDOrchestra successfully updated to database!", "Success");
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the orchestra CD into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the orchestra CD into the file. Check the entered information and try again!", "Error");
                         }
                     }
 
@@ -802,7 +842,7 @@ namespace BookCDDVDShop
                         bool chamberValidated;
 
                         chamberValidated = Validation.validateAnything(txtCDClassicalLabel.Text) &&
-                                           Validation.validatePersonName(txtCDClassicalArtists.Text) &&
+                                           Validation.validateAnything(txtCDClassicalArtists.Text) &&
                                            Validation.validateAnything(txtCDChamberInstrumentList.Text);
 
                         if (chamberValidated == true)
@@ -813,12 +853,12 @@ namespace BookCDDVDShop
 
                             dbFunctions.UpdateCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
 
-                            MessageBox.Show("CDChamber successfully updated to database!");
+                            MessageBox.Show("CDChamber successfully updated to database!", "Success");
                             FormController.clear(this);
                         }
                         else
                         {
-                            MessageBox.Show("There was a problem inserting the chamber CD into the file. Check the entered information and try again!");
+                            MessageBox.Show("There was a problem inserting the chamber CD into the file. Check the entered information and try again!", "Error");
                         }
                     }
                 }

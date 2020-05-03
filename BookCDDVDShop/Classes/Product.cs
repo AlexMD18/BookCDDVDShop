@@ -1,4 +1,11 @@
-﻿// Product Class
+﻿/*
+ Alex Drogo / Sean Fuller
+ Due Date: 05/04/2020
+ CIS 3309_001
+ Class Description: 
+ */
+
+// Product Class
 // Responsible for all processing related to a Product
 
 // Written in VB by Joseph Jupin     Fall 2009

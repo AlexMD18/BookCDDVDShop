@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ Alex Drogo / Sean Fuller
+ Due Date: 05/04/2020
+ CIS 3309_001
+ Class Description: 
+ */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

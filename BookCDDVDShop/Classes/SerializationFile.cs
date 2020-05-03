@@ -1,4 +1,11 @@
-﻿// Serializable File (Persistent Object)  Class 
+﻿/*
+ Alex Drogo / Sean Fuller
+ Due Date: 05/04/2020
+ CIS 3309_001
+ Class Description: 
+ */
+
+// Serializable File (Persistent Object)  Class 
 // Responsible for all processing related to a Serializable File
 // Written in VB by Joseph Jupin     Fall 2009
 // Converted to CSharp by Frank Friedman   Ver 3  Spring 2016
