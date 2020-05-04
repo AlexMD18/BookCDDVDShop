@@ -2,7 +2,8 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: Form Controller - This controls what happens for each button you press on the from as well as with the textboxes. It determines
+
  */
 
 using System;

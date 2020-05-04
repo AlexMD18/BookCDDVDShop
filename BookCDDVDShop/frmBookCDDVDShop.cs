@@ -2,7 +2,8 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: Main Form - This class is the background code for all the attributes on the form. It handles what happens when the user presses
+ a button, types into a text box, deletes, and exit.
  */
 
 using System;
@@ -146,6 +147,8 @@ namespace BookCDDVDShop
             return true;
         }   // end Validate Product data
 
+
+        //Create Buttons on Form Begin
         private void btnCreateBook_Click(object sender, EventArgs e)
         {
             txtBookISBNLeft.ReadOnly = false;
@@ -217,12 +220,15 @@ namespace BookCDDVDShop
             btnSave.Enabled = true;
             clickedBtn = "create_CD_chamber";
         }
+        //Create Buttons on Form End
 
+        //Clear all text boxes
         private void btnClear_Click(object sender, EventArgs e)
         {
             FormController.clear(this);
         }
 
+        //Deletes an item 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm", MessageBoxButtons.YesNo);
@@ -235,6 +241,7 @@ namespace BookCDDVDShop
 
         }
 
+        //Exit form
         private void btnExit_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Number of records processed = " +
@@ -244,6 +251,7 @@ namespace BookCDDVDShop
             this.Close();
         }
 
+        //Edit button - Checks to see what type of object is being edited.
         private void btnEditUpdate_Click(object sender, EventArgs e)
         {
             bool success;
@@ -349,6 +357,7 @@ namespace BookCDDVDShop
             }  // end if on success
         }
 
+        
         private bool findAnItem(string v)
         {
             bool temp = Validation.validateProductUPC(txtProductUPC.Text);
@@ -389,6 +398,8 @@ namespace BookCDDVDShop
             }  // end else
         } // end getItem
 
+
+        //Searches item by the UPC number since it is guarenteed that this will be a unique identifier
         private void btnProductUPCSearch_Click(object sender, EventArgs e)
         {
             bool temp = Validation.validateProductUPC(txtProductUPCSearch.Text); //first make sure the format is correct
@@ -527,6 +538,7 @@ namespace BookCDDVDShop
             }
         }
 
+        //Saves item to database
         private void btnSave_Click(object sender, EventArgs e)
         {
             bool productValidated;

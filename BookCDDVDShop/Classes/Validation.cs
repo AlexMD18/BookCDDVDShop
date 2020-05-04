@@ -2,7 +2,7 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: Validation Class - This class handles all the validation when a value is inputted into a textbox on the form.
  */
 
 using System;

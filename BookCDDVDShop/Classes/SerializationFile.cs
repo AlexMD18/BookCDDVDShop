@@ -2,7 +2,7 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: Serialization File - This class manages s serializable file object by reading from and writing to a file
  */
 
 // Serializable File (Persistent Object)  Class 

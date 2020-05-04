@@ -2,7 +2,7 @@
  Alex Drogo / Sean Fuller
  Due Date: 05/04/2020
  CIS 3309_001
- Class Description: 
+ Class Description: ProductDB - This class handles everything that has to do with the database and connecting to it. It has all the SQL statements ect..
  */
 
 using System;
