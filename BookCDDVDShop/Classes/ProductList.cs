@@ -5,6 +5,9 @@
  Class Description: 
  */
 
+ //This class is used for creating and lists of recently accessed products
+ //Used by the update method to identify the current record to be updated
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
